@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects – Mature Energy Solar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary:"#004532","on-primary":"#ffffff","primary-container":"#065f46","on-primary-container":"#a0d8bc","primary-fixed":"#a6f2d1","primary-fixed-dim":"#8bd6b6","on-primary-fixed":"#002116","on-primary-fixed-variant":"#00513b",
+          secondary:"#006e2f","on-secondary":"#ffffff","secondary-container":"#6bff8f","on-secondary-container":"#007432","secondary-fixed":"#6bff8f","secondary-fixed-dim":"#4ae176","on-secondary-fixed":"#002109","on-secondary-fixed-variant":"#005321",
+          background:"#f5f5f7",surface:"#f5f5f7","surface-bright":"#ffffff","surface-dim":"#d6d6d9","surface-variant":"#e0e0e3","surface-container-lowest":"#ffffff","surface-container-low":"#efefef","surface-container":"#e8e8ea","surface-container-high":"#e0e0e2","surface-container-highest":"#d8d8da","on-surface":"#18181b","on-surface-variant":"#444448","on-background":"#18181b",outline:"#717175","outline-variant":"#c4c4c7","inverse-surface":"#2c2c2e","inverse-on-surface":"#f0f0f2","inverse-primary":"#8bd6b6","surface-tint":"#1b6b51",
+          tertiary:"#652925","on-tertiary":"#ffffff","tertiary-container":"#823f3a","on-tertiary-container":"#ffb4ad","tertiary-fixed":"#ffdad6","tertiary-fixed-dim":"#ffb3ac","on-tertiary-fixed":"#3b0908","on-tertiary-fixed-variant":"#73332f",
+          error:"#ba1a1a","on-error":"#ffffff","error-container":"#ffdad6","on-error-container":"#93000a"
+        },
+        spacing:{ gutter:"32px","stack-md":"24px","stack-lg":"48px","section-padding-y":"120px","stack-sm":"12px" },
+        fontFamily:{ h1:["Manrope","sans-serif"] },
+        fontSize:{
+          display:["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+          h1:["48px",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"700"}],
+          h2:["32px",{lineHeight:"1.3",fontWeight:"700"}],
+          h3:["24px",{lineHeight:"1.4",fontWeight:"600"}],
+          "body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],
+          "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+          "label-caps":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"700"}]
+        }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-[12px] border-b border-black/[0.07] shadow-[0_1px_4px_rgba(0,0,0,0.06)]" style="z-index:1100">
+  <div class="max-w-[90rem] mx-auto px-4 md:px-6 flex justify-between items-center" style="min-height:68px">
+    <a href="index.html">
+      <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none;color:#064e3b;font-family:Manrope,sans-serif;font-weight:900;font-size:1.3rem">MatureEnergy</span>
+    </a>
+    <div class="hidden lg:flex gap-10 items-center">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="about.html" class="nav-link" data-page="about">About Us</a>
+      <a href="services.html" class="nav-link" data-page="services">Services</a>
+      <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+      <a href="partner.html" class="nav-link" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="nav-link" data-page="careers">Careers</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="hidden sm:inline-flex border border-[#065f46] text-[#065f46] rounded-full px-5 py-2 text-sm font-bold hover:border-[#047857] hover:text-[#047857] transition-colors">Contact Us</a>
+      <a href="contact.html" class="hidden sm:inline-flex bg-[#065f46] text-white rounded-full px-5 py-2 text-sm font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+      <button class="lg:hidden p-2 text-[#064e3b]" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer" class="fixed inset-0 hidden" style="z-index:9999" onclick="closeMenu()">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="absolute right-0 top-0 h-full w-72 bg-white p-8 overflow-y-auto" style="border-radius:24px 0 0 24px" onclick="event.stopPropagation()">
+    <div class="flex justify-between items-center mb-8">
+      <a href="index.html"><img src="images/logo.svg" alt="Mature Energy" style="height:44px;object-fit:contain" onerror="this.style.display='none'"></a>
+      <button onclick="closeMenu()" class="p-2 text-[#064e3b]"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="space-y-1 mb-8">
+      <a href="index.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="home">Home</a>
+      <a href="about.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="about">About Us</a>
+      <a href="services.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="services">Services</a>
+      <a href="projects.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="projects">Projects</a>
+      <a href="partner.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="careers">Careers</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="contact.html" class="block text-center border-2 border-[#065f46] text-[#065f46] rounded-full py-3 font-bold hover:bg-emerald-50 transition-colors">Contact Us</a>
+      <a href="contact.html" class="block text-center bg-[#065f46] text-white rounded-full py-3 font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="relative pt-[68px] bg-[#004532]" style="min-height:420px">
+  <div class="max-w-5xl mx-auto px-6 py-20 text-center relative z-10">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-4 block">Our Projects</span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-5" style="letter-spacing:-0.02em">Powering India with Solar Energy</h1>
+    <p class="text-emerald-200 text-lg max-w-2xl mx-auto mb-8">From 7MW to 15MW+ — our ground-mounted solar plants across Maharashtra represent the backbone of India's renewable energy transition.</p>
+    <div class="inline-flex items-center gap-6 bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl px-8 py-4">
+      <div class="text-center">
+        <div class="text-2xl font-extrabold text-white">86.40 MW</div>
+        <div class="text-xs text-emerald-300 font-medium">Total Capacity</div>
+      </div>
+      <div class="w-px h-10 bg-white/20"></div>
+      <div class="text-center">
+        <div class="text-2xl font-extrabold text-white">9 Sites</div>
+        <div class="text-xs text-emerald-300 font-medium">Active Projects</div>
+      </div>
+      <div class="w-px h-10 bg-white/20"></div>
+      <div class="text-center">
+        <div class="text-2xl font-extrabold text-white">Maharashtra</div>
+        <div class="text-xs text-emerald-300 font-medium">State</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GROUND MOUNTED PROJECTS -->
+<section class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Ground Mounted</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#18181b]">Maharashtra Solar Portfolio</h2>
+  </div>
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">8.40 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Nandurbar, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Kothli Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">8.40 MW ground-mounted solar plant delivering clean energy to the Nandurbar district grid.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">9.60 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Nandurbar, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Savakheda Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">9.60 MW utility-scale solar installation with advanced monitoring and grid integration systems.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">15.60 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Jalgaon, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Hated Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">Our largest single-site plant at 15.60 MW, showcasing ME Solar's capability for large-scale EPC execution.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1466611653911-95081537e5b7?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">7.20 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Jalgaon, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Galangi Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">7.20 MW solar installation with bi-facial module technology for enhanced energy generation efficiency.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1581092162384-8987c1d64926?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">10.80 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Nandurbar, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Sultanpur Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">10.80 MW project featuring single-axis tracker technology for 20–25% higher energy yield over fixed-tilt systems.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">7.20 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Chhatrapati Sambhajinagar, MH</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Bidkin Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">7.20 MW solar plant in the Marathwada region supporting regional energy security and rural electrification goals.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1594818898109-44704bf4e65b?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">10.80 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Jalgaon, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Anturli Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">10.80 MW installation with advanced SCADA-based monitoring delivering optimum performance across all conditions.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1497436072909-60f360e1d4b1?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">8.40 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Nagpur, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Sawargaon Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">8.40 MW solar project in the Vidarbha region contributing to Maharashtra's renewable energy targets.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="relative h-48 overflow-hidden"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=80" alt="Solar project" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500"><div class="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent"></div><div class="absolute top-3 right-3 bg-white/90 backdrop-blur-sm rounded-full px-3 py-1 text-[#004532] text-xs font-bold">8.40 MW</div></div>
+      <div class="p-6">
+        <div class="flex items-center gap-2 mb-2">
+          <span class="material-symbols-outlined text-emerald-600" style="font-size:16px;font-variation-settings:'FILL' 1">location_on</span>
+          <span class="text-xs text-emerald-600 font-semibold">Nagpur, Maharashtra</span>
+        </div>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Bharsangi Solar Plant</h3>
+        <p class="text-[#444448] text-sm mb-4">8.40 MW plant completing ME Solar's Nagpur district portfolio, delivering clean energy to the eastern Maharashtra grid.</p>
+        <div class="flex gap-2 text-xs">
+          <span class="bg-emerald-50 text-emerald-700 px-3 py-1 rounded-full font-medium">Ground Mounted</span>
+          <span class="bg-[#f5f5f7] text-[#444448] px-3 py-1 rounded-full font-medium">EPC</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- FEATURED PROJECT: NTPC KANPUR -->
+<section class="py-20 px-4 md:px-8 bg-[#f5f5f7]">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Featured Project</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#18181b]">NTPC Kanpur – 15MW DC Work</h2>
+    </div>
+    <div class="bg-[#004532] rounded-3xl overflow-hidden">
+      <div class="grid md:grid-cols-2 gap-0">
+        <div class="p-10 md:p-12 flex flex-col justify-center">
+          <div class="inline-flex items-center gap-2 bg-emerald-700/50 border border-emerald-500/50 text-emerald-300 text-xs font-bold uppercase tracking-wider px-4 py-2 rounded-full mb-6 w-fit">
+            <span class="material-symbols-outlined" style="font-size:14px;font-variation-settings:'FILL' 1">bolt</span>
+            NTPC Collaboration
+          </div>
+          <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">NTPC Kanpur Solar Park</h3>
+          <p class="text-emerald-200 leading-relaxed mb-6">A landmark 15MW DC work project undertaken in collaboration with NTPC — India's largest energy conglomerate. This project demonstrates ME Solar's capability to execute NTPC-grade quality standards.</p>
+          <div class="grid grid-cols-2 gap-4 mb-8">
+            <div class="bg-white/10 rounded-xl p-4">
+              <div class="text-xl font-bold text-white">15 MW</div>
+              <div class="text-xs text-emerald-300">DC Capacity</div>
+            </div>
+            <div class="bg-white/10 rounded-xl p-4">
+              <div class="text-xl font-bold text-white">Kanpur, UP</div>
+              <div class="text-xs text-emerald-300">Location</div>
+            </div>
+          </div>
+          <button onclick="openProjectModal()" class="inline-flex items-center gap-2 bg-white text-[#064e3b] font-bold px-6 py-3 rounded-full hover:bg-emerald-50 transition-colors w-fit">
+            <span class="material-symbols-outlined" style="font-size:18px">open_in_new</span>
+            Explore Project
+          </button>
+        </div>
+        <div class="relative overflow-hidden" style="min-height:280px">
+          <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=900&q=80" alt="NTPC Kanpur Solar Project" class="absolute inset-0 w-full h-full object-cover opacity-70">
+          <div class="absolute inset-0 flex items-end p-6">
+            <span class="bg-black/40 text-white text-sm px-3 py-1 rounded-full backdrop-blur-sm">NTPC × ME Solar — Kanpur, UP</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#064e3b] text-white mt-10" style="border-radius:3rem 3rem 0 0">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1">
+        <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:16px" onerror="this.style.display='none'">
+        <p class="text-emerald-200 text-sm leading-relaxed mb-6">Transforming India, Inspiring Lives...</p>
+        <div class="space-y-3 text-sm text-emerald-200">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1;margin-top:2px">location_on</span>
+            <span>2/125, Vishwas Khand, Gomti Nagar, Lucknow (226010)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">phone</span>
+            <a href="tel:+919153832222" class="hover:text-white transition-colors">+91 9153832222</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">mail</span>
+            <a href="mailto:info@mesolarindia.com" class="hover:text-white transition-colors">info@mesolarindia.com</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="partner.html" class="hover:text-white transition-colors">Partner with us</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-2 text-sm uppercase tracking-wider">Start your journey</h4>
+        <p class="text-emerald-200 text-sm mb-4">Subscribe for solar insights and updates.</p>
+        <div id="newsletter-success" class="hidden bg-emerald-700/50 border border-emerald-500 rounded-2xl p-4 text-center">
+          <span class="material-symbols-outlined text-emerald-400 text-3xl block mb-1" style="font-variation-settings:'FILL' 1">check_circle</span>
+          <span class="text-white font-bold">Subscribed!</span>
+        </div>
+        <form id="newsletter-form" class="flex flex-col gap-2" action="https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse" method="POST" target="newsletter-iframe" onsubmit="newsletterSubmitting=true">
+          <input type="email" name="entry.1153429573" id="newsletter-email" placeholder="your@email.com" required
+            class="bg-white/10 border border-white/20 text-white placeholder-emerald-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400 transition-colors">
+          <button type="submit" class="bg-white text-[#064e3b] font-bold rounded-xl px-4 py-3 text-sm hover:bg-emerald-50 transition-colors">Subscribe</button>
+        </form>
+        <iframe id="newsletter-iframe" name="newsletter-iframe" style="display:none" onload="onNewsletterLoad()"></iframe>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center text-emerald-300 text-xs">
+      © 2025 Mature Energy. Transforming India, Inspiring Lives. | Solar EPC Specialists | Lucknow, Uttar Pradesh
+    </div>
+  </div>
+</footer>
+
+<!-- PROJECT MODAL -->
+<div id="project-modal" class="fixed inset-0 hidden items-center justify-center" style="z-index:99999;background:rgba(0,0,0,0.6)">
+  <div class="bg-white rounded-3xl shadow-2xl w-full max-w-2xl mx-4 overflow-hidden" style="max-height:90vh;display:flex;flex-direction:column">
+    <div class="flex items-center justify-between p-6 border-b border-[#e0e0e3]">
+      <h3 class="text-xl font-bold text-[#18181b]">NTPC Kanpur – Project Details</h3>
+      <button onclick="closeProjectModal()" class="p-2 rounded-full hover:bg-[#f5f5f7] transition-colors">
+        <span class="material-symbols-outlined text-[#444448]">close</span>
+      </button>
+    </div>
+    <div class="p-6 overflow-y-auto flex-1">
+      <p class="text-[#444448] leading-relaxed mb-6">The NTPC Kanpur 15MW DC project represents a milestone in ME Solar's journey as a trusted EPC partner. Working alongside NTPC, India's largest energy conglomerate, we delivered end-to-end DC works for this utility-scale solar installation.</p>
+      <div class="grid grid-cols-2 gap-4 mb-6">
+        <div class="bg-[#f5f5f7] rounded-xl p-4"><div class="font-bold text-[#18181b]">15 MW DC</div><div class="text-sm text-[#444448]">Project Capacity</div></div>
+        <div class="bg-[#f5f5f7] rounded-xl p-4"><div class="font-bold text-[#18181b]">Kanpur, UP</div><div class="text-sm text-[#444448]">Location</div></div>
+        <div class="bg-[#f5f5f7] rounded-xl p-4"><div class="font-bold text-[#18181b]">NTPC</div><div class="text-sm text-[#444448]">Client</div></div>
+        <div class="bg-[#f5f5f7] rounded-xl p-4"><div class="font-bold text-[#18181b]">DC Works</div><div class="text-sm text-[#444448]">Scope</div></div>
+      </div>
+      <!-- Success state -->
+      <div id="proj-booking-success" class="hidden text-center py-8">
+        <div class="w-16 h-16 bg-[#004532] rounded-full flex items-center justify-center mx-auto mb-4">
+          <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings:'FILL' 1">check_circle</span>
+        </div>
+        <h4 class="text-xl font-bold text-[#004532] mb-2">Enquiry Submitted!</h4>
+        <p class="text-[#444448] text-sm mb-4">Thank you! Our team will contact you shortly.</p>
+        <button onclick="closeProjectModal()" class="bg-[#004532] text-white px-6 py-2 rounded-full text-sm font-semibold">Close</button>
+      </div>
+
+      <!-- Enquiry form -->
+      <div id="proj-booking-form-wrap">
+        <hr class="border-[#e0e0e3] mb-5">
+        <h4 class="text-base font-bold text-[#18181b] mb-4">Enquire About This Project</h4>
+        <iframe name="proj-book-iframe" id="proj-book-iframe" style="display:none" onload="onProjBookLoad()"></iframe>
+        <form id="proj-book-form"
+          action="https://docs.google.com/forms/d/e/1FAIpQLSffOHY2UrZQ0tOSeS0YureMzl7WO0Q3O2qcHybPnQqjKyRVkQ/formResponse"
+          method="POST" target="proj-book-iframe"
+          onsubmit="projBookSubmitting=true"
+          class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-[#004532] mb-1">Name *</label>
+              <input type="text" name="entry.2092759666" required placeholder="Your name"
+                class="w-full border border-[#e0e0e3] rounded-xl px-4 py-2.5 text-sm focus:border-[#004532] outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#004532] mb-1">Email *</label>
+              <input type="email" name="entry.1606746374" required placeholder="your@email.com"
+                class="w-full border border-[#e0e0e3] rounded-xl px-4 py-2.5 text-sm focus:border-[#004532] outline-none transition-colors">
+            </div>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="block text-sm font-semibold text-[#004532] mb-1">Phone *</label>
+              <input type="tel" name="entry.680954916" required placeholder="+91 XXXXX XXXXX"
+                class="w-full border border-[#e0e0e3] rounded-xl px-4 py-2.5 text-sm focus:border-[#004532] outline-none transition-colors">
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#004532] mb-1">Preferred Date *</label>
+              <input type="date" name="entry.1936081467" required
+                class="w-full border border-[#e0e0e3] rounded-xl px-4 py-2.5 text-sm focus:border-[#004532] outline-none transition-colors">
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#004532] mb-1">Message *</label>
+            <textarea name="entry.1716496694" required rows="3" placeholder="Tell us about your requirements..."
+              class="w-full border border-[#e0e0e3] rounded-xl px-4 py-2.5 text-sm focus:border-[#004532] outline-none resize-none transition-colors"></textarea>
+          </div>
+          <div class="flex gap-3 pt-1">
+            <button type="submit" class="bg-[#006e2f] text-white px-8 py-3 rounded-xl font-semibold hover:bg-[#004532] transition-colors">Send Enquiry</button>
+            <button type="button" onclick="closeProjectModal()" class="border border-[#e0e0e3] text-[#444448] px-8 py-3 rounded-xl font-semibold hover:bg-[#f5f5f7] transition-colors">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="components.js"></script>
+<script>
+var projBookSubmitting = false;
+function onProjBookLoad(){
+  if(projBookSubmitting){
+    projBookSubmitting = false;
+    document.getElementById('proj-booking-form-wrap').classList.add('hidden');
+    document.getElementById('proj-booking-success').classList.remove('hidden');
+  }
+}
+function openProjectModal(){
+  // Reset form state
+  document.getElementById('proj-booking-form-wrap').classList.remove('hidden');
+  document.getElementById('proj-booking-success').classList.add('hidden');
+  document.getElementById('proj-book-form').reset();
+  var m = document.getElementById('project-modal');
+  m.style.display = 'flex'; m.classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+function closeProjectModal(){
+  var m = document.getElementById('project-modal');
+  m.style.display = 'none'; m.classList.add('hidden');
+  document.body.style.overflow = '';
+}
+document.getElementById('project-modal').addEventListener('click', function(e){ if(e.target===this) closeProjectModal(); });
+
+var newsletterSubmitting = false;
+function submitNewsletter(e){
+  e.preventDefault();
+  newsletterSubmitting = true;
+  document.getElementById('newsletter-iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse?entry.1153429573=' + encodeURIComponent(document.getElementById('newsletter-email').value) + '&submit=Submit';
+}
+function onNewsletterLoad(){
+  if(newsletterSubmitting){ newsletterSubmitting=false; document.getElementById('newsletter-form').classList.add('hidden'); document.getElementById('newsletter-success').classList.remove('hidden'); }
+}
+</script>
+</body>
+</html>

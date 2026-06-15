@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us – Mature Energy Solar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary:"#004532","on-primary":"#ffffff","primary-container":"#065f46","on-primary-container":"#a0d8bc","primary-fixed":"#a6f2d1","primary-fixed-dim":"#8bd6b6","on-primary-fixed":"#002116","on-primary-fixed-variant":"#00513b",
+          secondary:"#006e2f","on-secondary":"#ffffff","secondary-container":"#6bff8f","on-secondary-container":"#007432","secondary-fixed":"#6bff8f","secondary-fixed-dim":"#4ae176","on-secondary-fixed":"#002109","on-secondary-fixed-variant":"#005321",
+          background:"#f5f5f7",surface:"#f5f5f7","surface-bright":"#ffffff","surface-dim":"#d6d6d9","surface-variant":"#e0e0e3","surface-container-lowest":"#ffffff","surface-container-low":"#efefef","surface-container":"#e8e8ea","surface-container-high":"#e0e0e2","surface-container-highest":"#d8d8da","on-surface":"#18181b","on-surface-variant":"#444448","on-background":"#18181b",outline:"#717175","outline-variant":"#c4c4c7","inverse-surface":"#2c2c2e","inverse-on-surface":"#f0f0f2","inverse-primary":"#8bd6b6","surface-tint":"#1b6b51",
+          tertiary:"#652925","on-tertiary":"#ffffff","tertiary-container":"#823f3a","on-tertiary-container":"#ffb4ad","tertiary-fixed":"#ffdad6","tertiary-fixed-dim":"#ffb3ac","on-tertiary-fixed":"#3b0908","on-tertiary-fixed-variant":"#73332f",
+          error:"#ba1a1a","on-error":"#ffffff","error-container":"#ffdad6","on-error-container":"#93000a"
+        },
+        spacing:{ gutter:"32px","stack-md":"24px","stack-lg":"48px","section-padding-y":"120px","stack-sm":"12px" },
+        fontFamily:{ h1:["Manrope","sans-serif"],h2:["Manrope","sans-serif"],h3:["Manrope","sans-serif"],display:["Manrope","sans-serif"],"body-md":["Manrope","sans-serif"],"body-lg":["Manrope","sans-serif"],"label-caps":["Manrope","sans-serif"] },
+        fontSize:{
+          display:["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+          h1:["48px",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"700"}],
+          h2:["32px",{lineHeight:"1.3",fontWeight:"700"}],
+          h3:["24px",{lineHeight:"1.4",fontWeight:"600"}],
+          "body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],
+          "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+          "label-caps":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"700"}]
+        }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-[12px] border-b border-black/[0.07] shadow-[0_1px_4px_rgba(0,0,0,0.06)]" style="z-index:1100">
+  <div class="max-w-[90rem] mx-auto px-4 md:px-6 flex justify-between items-center" style="min-height:68px">
+    <a href="index.html">
+      <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none;color:#064e3b;font-family:Manrope,sans-serif;font-weight:900;font-size:1.3rem">MatureEnergy</span>
+    </a>
+    <div class="hidden lg:flex gap-10 items-center">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="about.html" class="nav-link" data-page="about">About Us</a>
+      <a href="services.html" class="nav-link" data-page="services">Services</a>
+      <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+      <a href="partner.html" class="nav-link" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="nav-link" data-page="careers">Careers</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="hidden sm:inline-flex border border-[#065f46] text-[#065f46] rounded-full px-5 py-2 text-sm font-bold hover:border-[#047857] hover:text-[#047857] transition-colors">Contact Us</a>
+      <a href="contact.html" class="hidden sm:inline-flex bg-[#065f46] text-white rounded-full px-5 py-2 text-sm font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+      <button class="lg:hidden p-2 text-[#064e3b]" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer" class="fixed inset-0 hidden" style="z-index:9999" onclick="closeMenu()">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="absolute right-0 top-0 h-full w-72 bg-white p-8 overflow-y-auto" style="border-radius:24px 0 0 24px" onclick="event.stopPropagation()">
+    <div class="flex justify-between items-center mb-8">
+      <a href="index.html"><img src="images/logo.svg" alt="Mature Energy" style="height:44px;object-fit:contain" onerror="this.style.display='none'"></a>
+      <button onclick="closeMenu()" class="p-2 text-[#064e3b]"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="space-y-1 mb-8">
+      <a href="index.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="home">Home</a>
+      <a href="about.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="about">About Us</a>
+      <a href="services.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="services">Services</a>
+      <a href="projects.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="projects">Projects</a>
+      <a href="partner.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="careers">Careers</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="contact.html" class="block text-center border-2 border-[#065f46] text-[#065f46] rounded-full py-3 font-bold hover:bg-emerald-50 transition-colors">Contact Us</a>
+      <a href="contact.html" class="block text-center bg-[#065f46] text-white rounded-full py-3 font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="relative pt-[68px] bg-[#004532] overflow-hidden" style="min-height:420px">
+  <div class="absolute inset-0 opacity-10">
+    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?w=1400&q=80" alt="Solar panels" class="w-full h-full object-cover">
+  </div>
+  <div class="relative z-10 max-w-5xl mx-auto px-6 py-20 text-center">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-4 block">About ME Solar</span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-white mb-5" style="letter-spacing:-0.02em">Transforming India,<br>Inspiring Lives</h1>
+    <p class="text-emerald-200 text-lg max-w-2xl mx-auto">A solar EPC company built on purpose, driven by values, and committed to a greener India.</p>
+  </div>
+</section>
+
+<!-- CORE PURPOSE -->
+<section class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="grid md:grid-cols-2 gap-12 items-center">
+    <div class="relative">
+      <div class="bg-[#065f46] rounded-3xl overflow-hidden" style="min-height:400px">
+        <img src="https://images.unsplash.com/photo-1508514177221-188b1cf16e9d?w=600&q=80" alt="ME Solar installation site" class="w-full h-full object-cover">
+        <div class="absolute inset-0 flex items-center justify-center" style="background:rgba(6,95,70,0.7)">
+          <div class="grid grid-cols-2 gap-4 p-8">
+            <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 text-white text-center">
+              <div class="text-4xl font-extrabold">86+</div>
+              <div class="text-sm text-emerald-200 mt-1">MW Installed</div>
+            </div>
+            <div class="bg-white/15 backdrop-blur-sm rounded-2xl p-5 text-white text-center">
+              <div class="text-4xl font-extrabold">9+</div>
+              <div class="text-sm text-emerald-200 mt-1">Sites in Maharashtra</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Our Core Purpose</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#18181b] mb-6">Built to Power the Future</h2>
+      <p class="text-[#444448] leading-relaxed mb-5">
+        Mature Energy Solar (ME Solar) is a solar EPC company based in Lucknow, India. Founded on the belief that clean energy should be accessible to every Indian, we have grown into one of the most trusted names in the solar industry.
+      </p>
+      <p class="text-[#444448] leading-relaxed mb-5">
+        From ground-mounted utility-scale plants in Maharashtra to rooftop installations across northern India, our team of experienced engineers and technicians brings excellence to every project.
+      </p>
+      <p class="text-[#444448] leading-relaxed">
+        We don't just install solar panels. We engineer the future — creating sustainable energy infrastructure that powers homes, businesses, and communities for decades to come.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- VALUES - 4 D's -->
+<section class="py-20 px-4 md:px-8 bg-[#f5f5f7]">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Our Values</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-[#18181b] mb-4">The 4 D's of ME Solar</h2>
+      <p class="text-[#444448] max-w-xl mx-auto">Our core principles that guide every decision, every project, and every relationship we build.</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="bg-white rounded-3xl p-8 border border-[#e0e0e3] hover:shadow-md transition-shadow text-center">
+        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-[#065f46]" style="font-size:28px;font-variation-settings:'FILL' 1">military_tech</span>
+        </div>
+        <h3 class="text-xl font-bold text-[#18181b] mb-3">Discipline</h3>
+        <p class="text-[#444448] text-sm leading-relaxed">Consistent, systematic approach to every task. We follow processes, respect timelines, and deliver with precision.</p>
+      </div>
+      <div class="bg-[#004532] rounded-3xl p-8 hover:shadow-md transition-shadow text-center">
+        <div class="w-16 h-16 bg-white/10 rounded-full flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-white" style="font-size:28px;font-variation-settings:'FILL' 1">favorite</span>
+        </div>
+        <h3 class="text-xl font-bold text-white mb-3">Dedication</h3>
+        <p class="text-emerald-200 text-sm leading-relaxed">Unwavering commitment to our clients' success. We go beyond the brief to deliver outcomes that truly matter.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 border border-[#e0e0e3] hover:shadow-md transition-shadow text-center">
+        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-[#065f46]" style="font-size:28px;font-variation-settings:'FILL' 1">navigation</span>
+        </div>
+        <h3 class="text-xl font-bold text-[#18181b] mb-3">Direction</h3>
+        <p class="text-[#444448] text-sm leading-relaxed">Clear vision and strategic thinking. We know where we're going and bring our clients along for a purposeful journey.</p>
+      </div>
+      <div class="bg-white rounded-3xl p-8 border border-[#e0e0e3] hover:shadow-md transition-shadow text-center">
+        <div class="w-16 h-16 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-5">
+          <span class="material-symbols-outlined text-[#065f46]" style="font-size:28px;font-variation-settings:'FILL' 1">psychology</span>
+        </div>
+        <h3 class="text-xl font-bold text-[#18181b] mb-3">Decision Making</h3>
+        <p class="text-[#444448] text-sm leading-relaxed">Data-driven, thoughtful choices backed by engineering expertise and real-world project experience.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LEADERSHIP TEAM -->
+<section class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Our People</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#18181b]">Leadership Team</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="bg-[#065f46] h-48 flex items-center justify-center">
+        <div class="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center">
+          <span class="text-white text-3xl font-extrabold">MK</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-[#18181b] mb-1">Manoj Kumar</h3>
+        <p class="text-emerald-600 text-sm font-semibold mb-3">Founder & Managing Director</p>
+        <p class="text-[#444448] text-sm leading-relaxed">Visionary leader with over 15 years of experience in the renewable energy sector. Drives ME Solar's mission to transform India's energy landscape.</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="bg-[#004532] h-48 flex items-center justify-center">
+        <div class="w-24 h-24 rounded-full bg-white/20 flex items-center justify-center">
+          <span class="text-white text-3xl font-extrabold">SS</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <h3 class="text-xl font-bold text-[#18181b] mb-1">Sunil Sagar</h3>
+        <p class="text-emerald-600 text-sm font-semibold mb-3">Director – Operations</p>
+        <p class="text-[#444448] text-sm leading-relaxed">Expert in solar project execution with deep expertise in EPC operations, quality control and large-scale project delivery across Maharashtra.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GET IN TOUCH -->
+<section class="py-20 px-4 md:px-8 bg-[#004532]">
+  <div class="max-w-5xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Get in Touch</h2>
+      <p class="text-emerald-200 max-w-xl mx-auto">We're here to answer your questions and help you start your solar journey.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+        <span class="material-symbols-outlined text-emerald-400 mb-3 block" style="font-size:32px;font-variation-settings:'FILL' 1">location_on</span>
+        <h4 class="font-bold text-white mb-2">Address</h4>
+        <p class="text-emerald-200 text-sm">2/125, Vishwas Khand, Gomti Nagar, Lucknow (226010)</p>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+        <span class="material-symbols-outlined text-emerald-400 mb-3 block" style="font-size:32px;font-variation-settings:'FILL' 1">phone</span>
+        <h4 class="font-bold text-white mb-2">Phone</h4>
+        <a href="tel:+919153832222" class="text-emerald-200 text-sm hover:text-white transition-colors">+91 9153832222</a>
+      </div>
+      <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center">
+        <span class="material-symbols-outlined text-emerald-400 mb-3 block" style="font-size:32px;font-variation-settings:'FILL' 1">mail</span>
+        <h4 class="font-bold text-white mb-2">Email</h4>
+        <a href="mailto:info@mesolarindia.com" class="text-emerald-200 text-sm hover:text-white transition-colors">info@mesolarindia.com</a>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="contact.html" class="inline-flex items-center gap-2 bg-white text-[#064e3b] font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition-colors">
+        <span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1">send</span>
+        Send us a Message
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#064e3b] text-white mt-10" style="border-radius:3rem 3rem 0 0">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1">
+        <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:16px" onerror="this.style.display='none'">
+        <p class="text-emerald-200 text-sm leading-relaxed mb-6">Transforming India, Inspiring Lives...</p>
+        <div class="space-y-3 text-sm text-emerald-200">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1;margin-top:2px">location_on</span>
+            <span>2/125, Vishwas Khand, Gomti Nagar, Lucknow (226010)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">phone</span>
+            <a href="tel:+919153832222" class="hover:text-white transition-colors">+91 9153832222</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">mail</span>
+            <a href="mailto:info@mesolarindia.com" class="hover:text-white transition-colors">info@mesolarindia.com</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="partner.html" class="hover:text-white transition-colors">Partner with us</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-2 text-sm uppercase tracking-wider">Start your journey</h4>
+        <p class="text-emerald-200 text-sm mb-4">Subscribe for solar insights and updates.</p>
+        <div id="newsletter-success" class="hidden bg-emerald-700/50 border border-emerald-500 rounded-2xl p-4 text-center">
+          <span class="material-symbols-outlined text-emerald-400 text-3xl block mb-1" style="font-variation-settings:'FILL' 1">check_circle</span>
+          <span class="text-white font-bold">Subscribed!</span>
+        </div>
+        <form id="newsletter-form" class="flex flex-col gap-2" action="https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse" method="POST" target="newsletter-iframe" onsubmit="newsletterSubmitting=true">
+          <input type="email" name="entry.1153429573" id="newsletter-email" placeholder="your@email.com" required
+            class="bg-white/10 border border-white/20 text-white placeholder-emerald-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400 transition-colors">
+          <button type="submit" class="bg-white text-[#064e3b] font-bold rounded-xl px-4 py-3 text-sm hover:bg-emerald-50 transition-colors">Subscribe</button>
+        </form>
+        <iframe id="newsletter-iframe" name="newsletter-iframe" style="display:none" onload="onNewsletterLoad()"></iframe>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center text-emerald-300 text-xs">
+      © 2025 Mature Energy. Transforming India, Inspiring Lives. | Solar EPC Specialists | Lucknow, Uttar Pradesh
+    </div>
+  </div>
+</footer>
+
+<script src="components.js"></script>
+<script>
+var newsletterSubmitting = false;
+function submitNewsletter(e){
+  e.preventDefault();
+  var email = document.getElementById('newsletter-email').value;
+  newsletterSubmitting = true;
+  var url = 'https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse?entry.1153429573=' + encodeURIComponent(email) + '&submit=Submit';
+  document.getElementById('newsletter-iframe').src = url;
+}
+function onNewsletterLoad(){
+  if(newsletterSubmitting){
+    newsletterSubmitting = false;
+    document.getElementById('newsletter-form').classList.add('hidden');
+    document.getElementById('newsletter-success').classList.remove('hidden');
+  }
+}
+</script>
+</body>
+</html>

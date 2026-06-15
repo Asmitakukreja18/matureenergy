@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact – Mature Energy Solar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary:"#004532","on-primary":"#ffffff","primary-container":"#065f46","on-primary-container":"#a0d8bc","primary-fixed":"#a6f2d1","primary-fixed-dim":"#8bd6b6","on-primary-fixed":"#002116","on-primary-fixed-variant":"#00513b",
+          secondary:"#006e2f","on-secondary":"#ffffff","secondary-container":"#6bff8f","on-secondary-container":"#007432","secondary-fixed":"#6bff8f","secondary-fixed-dim":"#4ae176","on-secondary-fixed":"#002109","on-secondary-fixed-variant":"#005321",
+          background:"#f5f5f7",surface:"#f5f5f7","surface-bright":"#ffffff","surface-dim":"#d6d6d9","surface-variant":"#e0e0e3","surface-container-lowest":"#ffffff","surface-container-low":"#efefef","surface-container":"#e8e8ea","surface-container-high":"#e0e0e2","surface-container-highest":"#d8d8da","on-surface":"#18181b","on-surface-variant":"#444448","on-background":"#18181b",outline:"#717175","outline-variant":"#c4c4c7","inverse-surface":"#2c2c2e","inverse-on-surface":"#f0f0f2","inverse-primary":"#8bd6b6","surface-tint":"#1b6b51",
+          tertiary:"#652925","on-tertiary":"#ffffff","tertiary-container":"#823f3a","on-tertiary-container":"#ffb4ad","tertiary-fixed":"#ffdad6","tertiary-fixed-dim":"#ffb3ac","on-tertiary-fixed":"#3b0908","on-tertiary-fixed-variant":"#73332f",
+          error:"#ba1a1a","on-error":"#ffffff","error-container":"#ffdad6","on-error-container":"#93000a"
+        },
+        spacing:{ gutter:"32px","stack-md":"24px","stack-lg":"48px","section-padding-y":"120px","stack-sm":"12px" },
+        fontFamily:{ h1:["Manrope","sans-serif"] },
+        fontSize:{
+          display:["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+          h1:["48px",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"700"}],
+          h2:["32px",{lineHeight:"1.3",fontWeight:"700"}],
+          h3:["24px",{lineHeight:"1.4",fontWeight:"600"}],
+          "body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],
+          "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+          "label-caps":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"700"}]
+        }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-[12px] border-b border-black/[0.07] shadow-[0_1px_4px_rgba(0,0,0,0.06)]" style="z-index:1100">
+  <div class="max-w-[90rem] mx-auto px-4 md:px-6 flex justify-between items-center" style="min-height:68px">
+    <a href="index.html">
+      <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none;color:#064e3b;font-family:Manrope,sans-serif;font-weight:900;font-size:1.3rem">MatureEnergy</span>
+    </a>
+    <div class="hidden lg:flex gap-10 items-center">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="about.html" class="nav-link" data-page="about">About Us</a>
+      <a href="services.html" class="nav-link" data-page="services">Services</a>
+      <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+      <a href="partner.html" class="nav-link" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="nav-link" data-page="careers">Careers</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="hidden sm:inline-flex border border-[#065f46] text-[#065f46] rounded-full px-5 py-2 text-sm font-bold hover:border-[#047857] hover:text-[#047857] transition-colors">Contact Us</a>
+      <a href="contact.html" class="hidden sm:inline-flex bg-[#065f46] text-white rounded-full px-5 py-2 text-sm font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+      <button class="lg:hidden p-2 text-[#064e3b]" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer" class="fixed inset-0 hidden" style="z-index:9999" onclick="closeMenu()">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="absolute right-0 top-0 h-full w-72 bg-white p-8 overflow-y-auto" style="border-radius:24px 0 0 24px" onclick="event.stopPropagation()">
+    <div class="flex justify-between items-center mb-8">
+      <a href="index.html"><img src="images/logo.svg" alt="Mature Energy" style="height:44px;object-fit:contain" onerror="this.style.display='none'"></a>
+      <button onclick="closeMenu()" class="p-2 text-[#064e3b]"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="space-y-1 mb-8">
+      <a href="index.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="home">Home</a>
+      <a href="about.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="about">About Us</a>
+      <a href="services.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="services">Services</a>
+      <a href="projects.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="projects">Projects</a>
+      <a href="partner.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="careers">Careers</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="contact.html" class="block text-center border-2 border-[#065f46] text-[#065f46] rounded-full py-3 font-bold hover:bg-emerald-50 transition-colors">Contact Us</a>
+      <a href="contact.html" class="block text-center bg-[#065f46] text-white rounded-full py-3 font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="relative pt-[68px] bg-[#065f46] overflow-hidden" style="min-height:380px">
+  <div class="absolute inset-0 opacity-15">
+    <img src="images/contact-bg.jpg" alt="" class="w-full h-full object-cover" onerror="this.style.display='none'">
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-4 block">Connect with MatureEnergy</span>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-5" style="letter-spacing:-0.02em">Let's illuminate your<br>future together</h1>
+    <p class="text-emerald-200 text-lg max-w-xl mx-auto">Whether you're planning a rooftop installation or a large-scale solar farm — our team is ready to help you every step of the way.</p>
+  </div>
+</section>
+
+<!-- CONTACT MAIN -->
+<section class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="grid lg:grid-cols-3 gap-8">
+    <!-- Left Sidebar -->
+    <div class="space-y-6">
+      <!-- Our Studio -->
+      <div class="bg-white rounded-3xl p-6 border border-[#e0e0e3]">
+        <h3 class="font-bold text-[#18181b] mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#065f46]" style="font-variation-settings:'FILL' 1">location_on</span>
+          Our Studio
+        </h3>
+        <p class="text-[#444448] text-sm leading-relaxed">2/125, Vishwas Khand,<br>Gomti Nagar,<br>Lucknow (226010),<br>Uttar Pradesh, India</p>
+      </div>
+      <!-- Get in Touch -->
+      <div class="bg-white rounded-3xl p-6 border border-[#e0e0e3]">
+        <h3 class="font-bold text-[#18181b] mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-[#065f46]" style="font-variation-settings:'FILL' 1">phone</span>
+          Get in Touch
+        </h3>
+        <div class="space-y-3 text-sm">
+          <div>
+            <div class="text-[#444448] text-xs mb-1">Phone</div>
+            <a href="tel:+16505550192" class="text-[#18181b] font-medium hover:text-[#065f46] transition-colors">+1 (650) 555-0192</a>
+          </div>
+          <div>
+            <div class="text-[#444448] text-xs mb-1">Email</div>
+            <a href="mailto:hello@matureenergy.com" class="text-[#18181b] font-medium hover:text-[#065f46] transition-colors">hello@matureenergy.com</a>
+          </div>
+          <div>
+            <div class="text-[#444448] text-xs mb-1">India Office</div>
+            <a href="tel:+919153832222" class="text-[#18181b] font-medium hover:text-[#065f46] transition-colors">+91 9153832222</a>
+          </div>
+          <div>
+            <div class="text-[#444448] text-xs mb-1">India Email</div>
+            <a href="mailto:info@mesolarindia.com" class="text-[#18181b] font-medium hover:text-[#065f46] transition-colors">info@mesolarindia.com</a>
+          </div>
+        </div>
+      </div>
+      <!-- Consultation Hours -->
+      <div class="bg-[#004532] rounded-3xl p-6">
+        <h3 class="font-bold text-white mb-4 flex items-center gap-2">
+          <span class="material-symbols-outlined text-emerald-400" style="font-variation-settings:'FILL' 1">schedule</span>
+          Consultation Hours
+        </h3>
+        <div class="space-y-3 text-sm">
+          <div class="flex justify-between">
+            <span class="text-emerald-200">Monday – Friday</span>
+            <span class="text-white font-medium">9:00 – 18:00</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-emerald-200">Saturday</span>
+            <span class="text-white font-medium">10:00 – 14:00</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="text-emerald-200">Sunday</span>
+            <span class="text-emerald-400 font-medium">Closed</span>
+          </div>
+        </div>
+        <div class="mt-4 pt-4 border-t border-white/10">
+          <div class="flex items-center gap-2">
+            <div class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
+            <span class="text-emerald-300 text-xs">We typically respond within 2 hours</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Right: Contact Form -->
+    <div class="lg:col-span-2">
+      <div class="bg-white rounded-3xl p-8 md:p-10 border border-[#e0e0e3]">
+        <!-- Success state -->
+        <div id="contact-success" class="hidden text-center py-16">
+          <div class="w-20 h-20 bg-emerald-50 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="material-symbols-outlined text-emerald-600" style="font-size:40px;font-variation-settings:'FILL' 1">check_circle</span>
+          </div>
+          <h3 class="text-2xl font-bold text-[#18181b] mb-3">Thank You!</h3>
+          <p class="text-[#444448] max-w-md mx-auto">Your message has been sent. We'll get back to you within 24 hours.</p>
+          <button onclick="document.getElementById('contact-success').classList.add('hidden');document.getElementById('contact-form-wrap').classList.remove('hidden')" class="mt-6 inline-flex items-center gap-2 text-[#065f46] font-bold hover:gap-3 transition-all">
+            Send another message <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+          </button>
+        </div>
+        <div id="contact-form-wrap">
+          <h2 class="text-2xl font-bold text-[#18181b] mb-2">Send us a Message</h2>
+          <p class="text-[#444448] text-sm mb-8">Fill out the form below and we'll respond within 24 hours.</p>
+          <form id="contact-form" onsubmit="submitContact(event)" class="space-y-5">
+            <div class="grid sm:grid-cols-2 gap-5">
+              <div>
+                <label class="block text-sm font-semibold text-[#18181b] mb-2">Full Name *</label>
+                <input type="text" name="entry.202936021" required placeholder="Rahul Sharma"
+                  class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm text-[#18181b] focus:outline-none focus:border-[#065f46] transition-colors">
+              </div>
+              <div>
+                <label class="block text-sm font-semibold text-[#18181b] mb-2">Email Address *</label>
+                <input type="email" name="entry.1473233395" required placeholder="rahul@example.com"
+                  class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm text-[#18181b] focus:outline-none focus:border-[#065f46] transition-colors">
+              </div>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#18181b] mb-2">Subject *</label>
+              <select name="entry.1254009060" required
+                class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm text-[#18181b] focus:outline-none focus:border-[#065f46] transition-colors">
+                <option value="">Select a subject</option>
+                <option value="Solar EPC Quote">Solar EPC Quote</option>
+                <option value="Rooftop Solar">Rooftop Solar</option>
+                <option value="Operation & Maintenance">Operation & Maintenance</option>
+                <option value="Partnership Inquiry">Partnership Inquiry</option>
+                <option value="Career Inquiry">Career Inquiry</option>
+                <option value="General Inquiry">General Inquiry</option>
+              </select>
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-[#18181b] mb-2">Message *</label>
+              <textarea name="entry.342369521" required rows="5" placeholder="Tell us about your project or inquiry..."
+                class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm text-[#18181b] focus:outline-none focus:border-[#065f46] transition-colors resize-none"></textarea>
+            </div>
+            <button type="submit" id="contact-submit" class="w-full bg-[#065f46] text-white font-bold py-4 rounded-xl hover:bg-[#047857] transition-colors flex items-center justify-center gap-2">
+              <span class="material-symbols-outlined" style="font-size:20px;font-variation-settings:'FILL' 1">send</span>
+              Send Message
+            </button>
+          </form>
+        </div>
+        <iframe id="contact-iframe" name="contact-iframe" style="display:none" onload="onContactLoad()"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAP PLACEHOLDER -->
+<section class="py-8 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="bg-[#e8e8ea] rounded-3xl overflow-hidden" style="height:300px;position:relative">
+    <div class="absolute inset-0 flex items-center justify-center">
+      <div class="text-center">
+        <div class="relative inline-block mb-4">
+          <span class="material-symbols-outlined text-[#065f46]" style="font-size:48px;font-variation-settings:'FILL' 1">location_on</span>
+          <div class="absolute inset-0 flex items-center justify-center">
+            <div class="w-16 h-16 rounded-full border-2 border-[#065f46]/30 animate-ping"></div>
+          </div>
+        </div>
+        <div class="font-bold text-[#18181b] text-lg">Lucknow, Uttar Pradesh</div>
+        <div class="text-[#444448] text-sm mt-1">2/125, Vishwas Khand, Gomti Nagar – 226010</div>
+      </div>
+    </div>
+    <!-- Grid lines for map feel -->
+    <div class="absolute inset-0" style="background-image:linear-gradient(rgba(100,100,100,0.05) 1px,transparent 1px),linear-gradient(90deg,rgba(100,100,100,0.05) 1px,transparent 1px);background-size:40px 40px"></div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-16 px-4 md:px-8 max-w-4xl mx-auto">
+  <div class="text-center mb-12">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Common Questions</span>
+    <h2 class="text-3xl font-bold text-[#18181b]">Frequently Asked Questions</h2>
+  </div>
+  <div class="space-y-4">
+    <div class="bg-white rounded-2xl border border-[#e0e0e3] overflow-hidden">
+      <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+        <span class="font-semibold text-[#18181b]">How long does a solar installation take?</span>
+        <span class="material-symbols-outlined text-[#444448] faq-icon transition-transform">expand_more</span>
+      </button>
+      <div class="faq-body hidden px-6 pb-6">
+        <p class="text-[#444448] text-sm leading-relaxed">Residential installations typically take 1–3 days. Commercial installations range from 1–4 weeks. Utility-scale projects are planned over 3–12 months depending on capacity and site conditions. We'll provide a detailed project timeline during consultation.</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl border border-[#e0e0e3] overflow-hidden">
+      <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+        <span class="font-semibold text-[#18181b]">Will solar panels work on cloudy days?</span>
+        <span class="material-symbols-outlined text-[#444448] faq-icon transition-transform">expand_more</span>
+      </button>
+      <div class="faq-body hidden px-6 pb-6">
+        <p class="text-[#444448] text-sm leading-relaxed">Yes! Solar panels still generate electricity on cloudy days — typically 10–25% of their rated output. Modern high-efficiency panels perform well in diffuse light conditions. Our system designs account for regional weather patterns to ensure consistent energy production year-round.</p>
+      </div>
+    </div>
+    <div class="bg-white rounded-2xl border border-[#e0e0e3] overflow-hidden">
+      <button class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFaq(this)">
+        <span class="font-semibold text-[#18181b]">What warranty do you provide?</span>
+        <span class="material-symbols-outlined text-[#444448] faq-icon transition-transform">expand_more</span>
+      </button>
+      <div class="faq-body hidden px-6 pb-6">
+        <p class="text-[#444448] text-sm leading-relaxed">We offer comprehensive warranties: solar panels carry a 25–30 year performance guarantee, inverters come with 5–10 year manufacturer warranty (extendable), and our workmanship warranty covers the entire system for 2–5 years. We also offer O&M AMC packages for ongoing protection.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#064e3b] text-white mt-10" style="border-radius:3rem 3rem 0 0">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1">
+        <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:16px" onerror="this.style.display='none'">
+        <p class="text-emerald-200 text-sm leading-relaxed mb-6">Transforming India, Inspiring Lives...</p>
+        <div class="space-y-3 text-sm text-emerald-200">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1;margin-top:2px">location_on</span>
+            <span>2/125, Vishwas Khand, Gomti Nagar, Lucknow (226010)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">phone</span>
+            <a href="tel:+919153832222" class="hover:text-white transition-colors">+91 9153832222</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">mail</span>
+            <a href="mailto:info@mesolarindia.com" class="hover:text-white transition-colors">info@mesolarindia.com</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="partner.html" class="hover:text-white transition-colors">Partner with us</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-2 text-sm uppercase tracking-wider">Start your journey</h4>
+        <p class="text-emerald-200 text-sm mb-4">Subscribe for solar insights and updates.</p>
+        <div id="newsletter-success" class="hidden bg-emerald-700/50 border border-emerald-500 rounded-2xl p-4 text-center">
+          <span class="material-symbols-outlined text-emerald-400 text-3xl block mb-1" style="font-variation-settings:'FILL' 1">check_circle</span>
+          <span class="text-white font-bold">Subscribed!</span>
+        </div>
+        <form id="newsletter-form" class="flex flex-col gap-2" action="https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse" method="POST" target="newsletter-iframe" onsubmit="newsletterSubmitting=true">
+          <input type="email" name="entry.1153429573" id="newsletter-email" placeholder="your@email.com" required
+            class="bg-white/10 border border-white/20 text-white placeholder-emerald-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400 transition-colors">
+          <button type="submit" class="bg-white text-[#064e3b] font-bold rounded-xl px-4 py-3 text-sm hover:bg-emerald-50 transition-colors">Subscribe</button>
+        </form>
+        <iframe id="newsletter-iframe" name="newsletter-iframe" style="display:none" onload="onNewsletterLoad()"></iframe>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center text-emerald-300 text-xs">
+      © 2025 Mature Energy. Transforming India, Inspiring Lives. | Solar EPC Specialists | Lucknow, Uttar Pradesh
+    </div>
+  </div>
+</footer>
+
+<script src="components.js"></script>
+<script>
+// FAQ toggle
+function toggleFaq(btn){
+  var body = btn.nextElementSibling;
+  var icon = btn.querySelector('.faq-icon');
+  body.classList.toggle('hidden');
+  icon.style.transform = body.classList.contains('hidden') ? '' : 'rotate(180deg)';
+}
+
+// Contact form
+var contactSubmitting = false;
+function submitContact(e){
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  var params = new URLSearchParams(data).toString();
+  contactSubmitting = true;
+  document.getElementById('contact-submit').textContent = 'Sending...';
+  document.getElementById('contact-iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSc0e-hC7FkB-DPP90ksGPvfReA6jJSSXvkmLGff87sgoy5xcQ/formResponse?' + params + '&submit=Submit';
+}
+function onContactLoad(){
+  if(contactSubmitting){
+    contactSubmitting = false;
+    document.getElementById('contact-form-wrap').classList.add('hidden');
+    document.getElementById('contact-success').classList.remove('hidden');
+  }
+}
+
+// Newsletter
+var newsletterSubmitting = false;
+function submitNewsletter(e){
+  e.preventDefault();
+  newsletterSubmitting = true;
+  document.getElementById('newsletter-iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse?entry.1153429573=' + encodeURIComponent(document.getElementById('newsletter-email').value) + '&submit=Submit';
+}
+function onNewsletterLoad(){
+  if(newsletterSubmitting){ newsletterSubmitting=false; document.getElementById('newsletter-form').classList.add('hidden'); document.getElementById('newsletter-success').classList.remove('hidden'); }
+}
+</script>
+</body>
+</html>

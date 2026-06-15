@@ -1,0 +1,57 @@
+<svg viewBox="0 0 420 130" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <!-- ── Dot pattern (center 65,65) ── -->
+
+  <!-- Ring 1 (r=25, 9 dots) -->
+  <circle cx="90" cy="65" r="4" fill="#c0392b"/>
+  <circle cx="84.15" cy="81.07" r="4" fill="#c0392b"/>
+  <circle cx="69.34" cy="89.62" r="4" fill="#c0392b"/>
+  <circle cx="52.5" cy="86.65" r="4" fill="#c0392b"/>
+  <circle cx="41.51" cy="73.55" r="4" fill="#c0392b"/>
+  <circle cx="41.51" cy="56.45" r="4" fill="#c0392b"/>
+  <circle cx="52.5" cy="43.35" r="4" fill="#c0392b"/>
+  <circle cx="69.34" cy="40.38" r="4" fill="#c0392b"/>
+  <circle cx="84.15" cy="48.93" r="4" fill="#c0392b"/>
+
+  <!-- Ring 2 (r=38, 12 dots) -->
+  <circle cx="103" cy="65" r="4.5" fill="#c0392b"/>
+  <circle cx="97.91" cy="84" r="4.5" fill="#c0392b"/>
+  <circle cx="84" cy="97.91" r="4.5" fill="#c0392b"/>
+  <circle cx="65" cy="103" r="4.5" fill="#c0392b"/>
+  <circle cx="46" cy="97.91" r="4.5" fill="#c0392b"/>
+  <circle cx="32.09" cy="84" r="4.5" fill="#c0392b"/>
+  <circle cx="27" cy="65" r="4.5" fill="#c0392b"/>
+  <circle cx="32.09" cy="46" r="4.5" fill="#c0392b"/>
+  <circle cx="46" cy="32.09" r="4.5" fill="#c0392b"/>
+  <circle cx="65" cy="27" r="4.5" fill="#c0392b"/>
+  <circle cx="84" cy="32.09" r="4.5" fill="#c0392b"/>
+  <circle cx="97.91" cy="46" r="4.5" fill="#c0392b"/>
+
+  <!-- Ring 3 (r=52, 15 dots) -->
+  <circle cx="117" cy="65" r="4" fill="#c0392b"/>
+  <circle cx="112.51" cy="86.15" r="4" fill="#c0392b"/>
+  <circle cx="99.82" cy="103.65" r="4" fill="#c0392b"/>
+  <circle cx="81.07" cy="114.48" r="4" fill="#c0392b"/>
+  <circle cx="59.57" cy="116.72" r="4" fill="#c0392b"/>
+  <circle cx="39" cy="110.03" r="4" fill="#c0392b"/>
+  <circle cx="22.91" cy="95.53" r="4" fill="#c0392b"/>
+  <circle cx="14.12" cy="75.82" r="4" fill="#c0392b"/>
+  <circle cx="14.12" cy="54.18" r="4" fill="#c0392b"/>
+  <circle cx="22.91" cy="34.47" r="4" fill="#c0392b"/>
+  <circle cx="39" cy="19.97" r="4" fill="#c0392b"/>
+  <circle cx="59.57" cy="13.28" r="4" fill="#c0392b"/>
+  <circle cx="81.07" cy="15.52" r="4" fill="#c0392b"/>
+  <circle cx="99.82" cy="26.35" r="4" fill="#c0392b"/>
+  <circle cx="112.51" cy="43.85" r="4" fill="#c0392b"/>
+
+  <!-- Center badge -->
+  <circle cx="65" cy="65" r="17" fill="#c0392b"/>
+  <text x="65" y="70" text-anchor="middle" fill="white" font-size="12" font-weight="800" font-family="Arial, Helvetica, sans-serif">me</text>
+
+  <!-- ── Text section ── -->
+  <!-- MATURE -->
+  <text x="140" y="55" fill="#1a2d5a" font-size="42" font-weight="900" font-family="Arial Black, Arial, Helvetica, sans-serif" letter-spacing="-1">MATURE</text>
+  <!-- ENERGY -->
+  <text x="140" y="97" fill="#c0392b" font-size="42" font-weight="900" font-family="Arial Black, Arial, Helvetica, sans-serif" letter-spacing="-1">ENERGY</text>
+  <!-- Tagline -->
+  <text x="143" y="114" fill="#555" font-size="9.5" font-family="Arial, Helvetica, sans-serif" letter-spacing="0.8">TRANSFORMING INDIA , INSPIRING LIVES</text>
+</svg>

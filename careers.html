@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Careers – Mature Energy Solar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary:"#004532","on-primary":"#ffffff","primary-container":"#065f46","on-primary-container":"#a0d8bc","primary-fixed":"#a6f2d1","primary-fixed-dim":"#8bd6b6","on-primary-fixed":"#002116","on-primary-fixed-variant":"#00513b",
+          secondary:"#006e2f","on-secondary":"#ffffff","secondary-container":"#6bff8f","on-secondary-container":"#007432","secondary-fixed":"#6bff8f","secondary-fixed-dim":"#4ae176","on-secondary-fixed":"#002109","on-secondary-fixed-variant":"#005321",
+          background:"#f5f5f7",surface:"#f5f5f7","surface-bright":"#ffffff","surface-dim":"#d6d6d9","surface-variant":"#e0e0e3","surface-container-lowest":"#ffffff","surface-container-low":"#efefef","surface-container":"#e8e8ea","surface-container-high":"#e0e0e2","surface-container-highest":"#d8d8da","on-surface":"#18181b","on-surface-variant":"#444448","on-background":"#18181b",outline:"#717175","outline-variant":"#c4c4c7","inverse-surface":"#2c2c2e","inverse-on-surface":"#f0f0f2","inverse-primary":"#8bd6b6","surface-tint":"#1b6b51",
+          tertiary:"#652925","on-tertiary":"#ffffff","tertiary-container":"#823f3a","on-tertiary-container":"#ffb4ad","tertiary-fixed":"#ffdad6","tertiary-fixed-dim":"#ffb3ac","on-tertiary-fixed":"#3b0908","on-tertiary-fixed-variant":"#73332f",
+          error:"#ba1a1a","on-error":"#ffffff","error-container":"#ffdad6","on-error-container":"#93000a"
+        },
+        spacing:{ gutter:"32px","stack-md":"24px","stack-lg":"48px","section-padding-y":"120px","stack-sm":"12px" },
+        fontFamily:{ h1:["Manrope","sans-serif"] },
+        fontSize:{
+          display:["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+          h1:["48px",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"700"}],
+          h2:["32px",{lineHeight:"1.3",fontWeight:"700"}],
+          h3:["24px",{lineHeight:"1.4",fontWeight:"600"}],
+          "body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],
+          "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+          "label-caps":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"700"}]
+        }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface">
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-[12px] border-b border-black/[0.07] shadow-[0_1px_4px_rgba(0,0,0,0.06)]" style="z-index:1100">
+  <div class="max-w-[90rem] mx-auto px-4 md:px-6 flex justify-between items-center" style="min-height:68px">
+    <a href="index.html">
+      <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none;color:#064e3b;font-family:Manrope,sans-serif;font-weight:900;font-size:1.3rem">MatureEnergy</span>
+    </a>
+    <div class="hidden lg:flex gap-10 items-center">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="about.html" class="nav-link" data-page="about">About Us</a>
+      <a href="services.html" class="nav-link" data-page="services">Services</a>
+      <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+      <a href="partner.html" class="nav-link" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="nav-link" data-page="careers">Careers</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="hidden sm:inline-flex border border-[#065f46] text-[#065f46] rounded-full px-5 py-2 text-sm font-bold hover:border-[#047857] hover:text-[#047857] transition-colors">Contact Us</a>
+      <a href="contact.html" class="hidden sm:inline-flex bg-[#065f46] text-white rounded-full px-5 py-2 text-sm font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+      <button class="lg:hidden p-2 text-[#064e3b]" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer" class="fixed inset-0 hidden" style="z-index:9999" onclick="closeMenu()">
+  <div class="absolute inset-0 bg-black/50"></div>
+  <div class="absolute right-0 top-0 h-full w-72 bg-white p-8 overflow-y-auto" style="border-radius:24px 0 0 24px" onclick="event.stopPropagation()">
+    <div class="flex justify-between items-center mb-8">
+      <a href="index.html"><img src="images/logo.svg" alt="Mature Energy" style="height:44px;object-fit:contain" onerror="this.style.display='none'"></a>
+      <button onclick="closeMenu()" class="p-2 text-[#064e3b]"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="space-y-1 mb-8">
+      <a href="index.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="home">Home</a>
+      <a href="about.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="about">About Us</a>
+      <a href="services.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="services">Services</a>
+      <a href="projects.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="projects">Projects</a>
+      <a href="partner.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="partner">Partner with us</a>
+      <a href="careers.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="careers">Careers</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="contact.html" class="block text-center border-2 border-[#065f46] text-[#065f46] rounded-full py-3 font-bold hover:bg-emerald-50 transition-colors">Contact Us</a>
+      <a href="contact.html" class="block text-center bg-[#065f46] text-white rounded-full py-3 font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="relative pt-[68px] bg-[#f5f5f7] overflow-hidden" style="min-height:480px">
+  <div class="max-w-5xl mx-auto px-6 py-24 text-center relative z-10">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-4 block">Join Our Team</span>
+    <h1 class="text-4xl md:text-6xl font-extrabold text-[#18181b] mb-6" style="letter-spacing:-0.02em">Build the future of<br>clean energy.</h1>
+    <p class="text-[#444448] text-lg max-w-2xl mx-auto mb-10">Join a mission-driven team of engineers, designers, and sustainability advocates working to power India with the sun.</p>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center">
+      <a href="#openings" class="inline-flex items-center gap-2 bg-[#065f46] text-white font-bold px-8 py-4 rounded-full hover:bg-[#047857] transition-colors">
+        <span class="material-symbols-outlined" style="font-size:20px">work</span>
+        View Openings
+      </a>
+      <a href="about.html" class="inline-flex items-center gap-2 border border-[#065f46] text-[#065f46] font-bold px-8 py-4 rounded-full hover:bg-emerald-50 transition-colors">
+        Our Mission
+        <span class="material-symbols-outlined" style="font-size:20px">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY MATUREENERGY BENTO -->
+<section class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-12">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Why Work Here</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#18181b]">Why MatureEnergy?</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <!-- Planet First - big card -->
+    <div class="bg-[#004532] rounded-3xl p-10 md:row-span-2 flex flex-col justify-between" style="min-height:360px">
+      <div>
+        <div class="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-6">
+          <span class="material-symbols-outlined text-white" style="font-size:28px;font-variation-settings:'FILL' 1">eco</span>
+        </div>
+        <h3 class="text-2xl font-bold text-white mb-4">Planet-First Philosophy</h3>
+        <p class="text-emerald-200 leading-relaxed">Every decision we make is filtered through one lens: what's best for the planet. From the products we source to the processes we follow, sustainability isn't a department — it's our DNA. When you join ME Solar, you join a movement.</p>
+      </div>
+      <div class="mt-8 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-full bg-emerald-500/30 flex items-center justify-center">
+          <span class="material-symbols-outlined text-emerald-300" style="font-size:18px;font-variation-settings:'FILL' 1">verified</span>
+        </div>
+        <span class="text-emerald-300 text-sm font-medium">B-Corp certified practices</span>
+      </div>
+    </div>
+    <!-- Inclusive Growth -->
+    <div class="bg-[#065f46] rounded-3xl p-8">
+      <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-white" style="font-size:24px;font-variation-settings:'FILL' 1">groups</span>
+      </div>
+      <h3 class="text-xl font-bold text-white mb-3">Inclusive Growth</h3>
+      <p class="text-emerald-200 text-sm leading-relaxed">We believe diverse teams build better products. Our inclusive culture celebrates every background, and our growth programs ensure everyone has a path forward.</p>
+    </div>
+    <!-- Cutting Edge Tech -->
+    <div class="bg-[#652925] rounded-3xl p-8">
+      <div class="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
+        <span class="material-symbols-outlined text-white" style="font-size:24px;font-variation-settings:'FILL' 1">memory</span>
+      </div>
+      <h3 class="text-xl font-bold text-white mb-3">Cutting Edge Tech</h3>
+      <p class="text-[#ffb4ad] text-sm leading-relaxed">Work with the latest in solar technology — bifacial panels, single-axis trackers, SCADA systems, and advanced energy storage solutions that define tomorrow's grid.</p>
+    </div>
+    <!-- Life at MatureEnergy - wide card -->
+    <div class="md:col-span-2 bg-white rounded-3xl p-8 border border-[#e0e0e3] flex flex-col md:flex-row gap-8 items-center">
+      <div class="flex-1">
+        <h3 class="text-2xl font-bold text-[#18181b] mb-4">Life at MatureEnergy</h3>
+        <p class="text-[#444448] leading-relaxed mb-6">From field visits to solar farms across Maharashtra to strategy sessions in Lucknow, life at ME Solar is dynamic, purposeful, and deeply rewarding. We invest in our people's growth — technical training, certifications, and leadership development.</p>
+        <div class="flex flex-wrap gap-3">
+          <span class="bg-emerald-50 text-emerald-700 text-sm px-4 py-2 rounded-full font-medium">Health Insurance</span>
+          <span class="bg-emerald-50 text-emerald-700 text-sm px-4 py-2 rounded-full font-medium">Learning Budget</span>
+          <span class="bg-emerald-50 text-emerald-700 text-sm px-4 py-2 rounded-full font-medium">Flexible Hours</span>
+          <span class="bg-emerald-50 text-emerald-700 text-sm px-4 py-2 rounded-full font-medium">EV Allowance</span>
+        </div>
+      </div>
+      <div class="w-48 h-48 rounded-2xl overflow-hidden flex-shrink-0">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDBIQ65riRTVk9DdLCNOJhH7i20b-GN7hjfQgWkears1n6SMJ-lPRxT1MJSWedW1ActhRndG7Tf_iqSm6mFq0gisGpi8lkiBwv4eFsbK0qK2HqDp8vQsuLbvIbkkG-i-zvvlP2ptp6dc6PMAz3P5IRLxPrulVOEynKFsC_Ng1VsYmbwkmmcpeovz4iW8UDUg897blcFVb8FiWs_lHkUKqIz_PrKwxqgTU3wQ_ZZkFdvIw2FiPQ7M_u1nOYjfjmd293V_SPCBd6OEMT" alt="Team at MatureEnergy" class="w-full h-full object-cover">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OPEN POSITIONS -->
+<section id="openings" class="py-16 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-10">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Open Roles</span>
+    <h2 class="text-3xl md:text-4xl font-bold text-[#18181b] mb-6">Open Positions</h2>
+    <div class="flex flex-wrap gap-3 justify-center" id="filter-btns">
+      <button onclick="filterJobs('All Jobs')" class="filter-btn active-filter bg-[#065f46] text-white px-5 py-2.5 rounded-full text-sm font-bold transition-colors" data-filter="All Jobs">All Jobs</button>
+      <button onclick="filterJobs('Engineering')" class="filter-btn bg-white border border-[#e0e0e3] text-[#18181b] px-5 py-2.5 rounded-full text-sm font-bold hover:border-[#065f46] transition-colors" data-filter="Engineering">Engineering</button>
+      <button onclick="filterJobs('Sales')" class="filter-btn bg-white border border-[#e0e0e3] text-[#18181b] px-5 py-2.5 rounded-full text-sm font-bold hover:border-[#065f46] transition-colors" data-filter="Sales">Sales</button>
+      <button onclick="filterJobs('Product')" class="filter-btn bg-white border border-[#e0e0e3] text-[#18181b] px-5 py-2.5 rounded-full text-sm font-bold hover:border-[#065f46] transition-colors" data-filter="Product">Product</button>
+    </div>
+  </div>
+  <div id="jobs-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6"></div>
+</section>
+
+<!-- APPLICATION FORM -->
+<section class="py-16 px-4 md:px-8 bg-[#f5f5f7]">
+  <div class="max-w-2xl mx-auto">
+    <div class="text-center mb-10">
+      <h2 class="text-3xl font-bold text-[#18181b] mb-3">Don't see the right fit?</h2>
+      <p class="text-[#444448]">Send us your details and we'll reach out when the right opportunity opens up.</p>
+    </div>
+    <div class="bg-white rounded-3xl p-8 border border-[#e0e0e3]">
+      <div id="career-success" class="hidden text-center py-12">
+        <span class="material-symbols-outlined text-emerald-600 mb-4 block" style="font-size:56px;font-variation-settings:'FILL' 1">check_circle</span>
+        <h3 class="text-2xl font-bold text-[#18181b] mb-3">Application Received!</h3>
+        <p class="text-[#444448]">We've got your details and will be in touch when the right opportunity arises.</p>
+      </div>
+      <form id="career-form" onsubmit="submitCareer(event)" class="space-y-5">
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-[#18181b] mb-2">Full Name *</label>
+            <input type="text" name="entry.1353127212" required placeholder="Your full name"
+              class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#18181b] mb-2">Email *</label>
+            <input type="email" name="entry.1246173823" required placeholder="your@email.com"
+              class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-[#18181b] mb-2">Area of Interest *</label>
+          <select name="entry.525221630" required
+            class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+            <option value="">Select area</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Sales & Business Development">Sales & Business Development</option>
+            <option value="Operations">Operations</option>
+            <option value="Design">Design</option>
+            <option value="Finance">Finance</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-[#18181b] mb-2">Resume Link</label>
+          <input type="url" name="entry.1197173698" placeholder="https://linkedin.com/in/yourprofile or Google Drive link"
+            class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+        </div>
+        <div>
+          <label class="block text-sm font-semibold text-[#18181b] mb-2">Tell us about yourself</label>
+          <textarea name="entry.1224762942" rows="4" placeholder="Briefly describe your experience and what excites you about clean energy..."
+            class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors resize-none"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-[#065f46] text-white font-bold py-4 rounded-xl hover:bg-[#047857] transition-colors">
+          Submit Application
+        </button>
+      </form>
+      <iframe id="career-iframe" name="career-iframe" style="display:none" onload="onCareerLoad()"></iframe>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#064e3b] text-white mt-10" style="border-radius:3rem 3rem 0 0">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-10 mb-12">
+      <div class="md:col-span-1">
+        <img src="images/logo.svg" alt="Mature Energy" style="height:48px;object-fit:contain;filter:brightness(0) invert(1);margin-bottom:16px" onerror="this.style.display='none'">
+        <p class="text-emerald-200 text-sm leading-relaxed mb-6">Transforming India, Inspiring Lives...</p>
+        <div class="space-y-3 text-sm text-emerald-200">
+          <div class="flex items-start gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1;margin-top:2px">location_on</span>
+            <span>2/125, Vishwas Khand, Gomti Nagar, Lucknow (226010)</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">phone</span>
+            <a href="tel:+919153832222" class="hover:text-white transition-colors">+91 9153832222</a>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">mail</span>
+            <a href="mailto:info@mesolarindia.com" class="hover:text-white transition-colors">info@mesolarindia.com</a>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="partner.html" class="hover:text-white transition-colors">Partner with us</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-2 text-sm uppercase tracking-wider">Start your journey</h4>
+        <p class="text-emerald-200 text-sm mb-4">Subscribe for solar insights and updates.</p>
+        <div id="newsletter-success" class="hidden bg-emerald-700/50 border border-emerald-500 rounded-2xl p-4 text-center">
+          <span class="material-symbols-outlined text-emerald-400 text-3xl block mb-1" style="font-variation-settings:'FILL' 1">check_circle</span>
+          <span class="text-white font-bold">Subscribed!</span>
+        </div>
+        <form id="newsletter-form" class="flex flex-col gap-2" action="https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse" method="POST" target="newsletter-iframe" onsubmit="newsletterSubmitting=true">
+          <input type="email" name="entry.1153429573" id="newsletter-email" placeholder="your@email.com" required
+            class="bg-white/10 border border-white/20 text-white placeholder-emerald-300 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-emerald-400 transition-colors">
+          <button type="submit" class="bg-white text-[#064e3b] font-bold rounded-xl px-4 py-3 text-sm hover:bg-emerald-50 transition-colors">Subscribe</button>
+        </form>
+        <iframe id="newsletter-iframe" name="newsletter-iframe" style="display:none" onload="onNewsletterLoad()"></iframe>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-6 text-center text-emerald-300 text-xs">
+      © 2025 Mature Energy. Transforming India, Inspiring Lives. | Solar EPC Specialists | Lucknow, Uttar Pradesh
+    </div>
+  </div>
+</footer>
+
+<script src="components.js"></script>
+<script>
+var allJobs = [
+  { title:"Senior Photovoltaic Engineer", tag:"Engineering", location:"San Francisco, CA", type:"Full-time", desc:"Lead the design and analysis of solar PV systems. Conduct energy yield assessments, system optimization, and coordinate with project teams." },
+  { title:"Sustainability Account Executive", tag:"Sales", location:"Austin, TX", type:"Full-time", desc:"Drive new business by building relationships with commercial and industrial clients. Identify solar opportunities and lead them through the sales cycle." },
+  { title:"Lead UX Designer", tag:"Product", location:"Remote", type:"Full-time", desc:"Design intuitive monitoring dashboards and client portals for our solar energy management platform. Own the end-to-end design process." },
+  { title:"Field Operations Manager", tag:"Operations", location:"Denver, CO", type:"Full-time", desc:"Oversee field installation and maintenance teams across multiple project sites. Ensure quality, safety, and timeline adherence." }
+];
+
+function filterJobs(filter){
+  // Update button styles
+  document.querySelectorAll('.filter-btn').forEach(function(b){
+    if(b.dataset.filter === filter){
+      b.classList.add('bg-[#065f46]','text-white');
+      b.classList.remove('bg-white','text-[#18181b]','border','border-[#e0e0e3]');
+    } else {
+      b.classList.remove('bg-[#065f46]','text-white');
+      b.classList.add('bg-white','text-[#18181b]','border','border-[#e0e0e3]');
+    }
+  });
+  var filtered = filter === 'All Jobs' ? allJobs : allJobs.filter(function(j){ return j.tag === filter; });
+  renderJobs(filtered);
+}
+
+function renderJobs(jobs){
+  var grid = document.getElementById('jobs-grid');
+  if(jobs.length === 0){
+    grid.innerHTML = '<div class="md:col-span-2 text-center py-12 text-[#444448]"><span class="material-symbols-outlined text-5xl block mb-3 text-[#d6d6d9]">work_off</span>No positions in this category right now. Check back soon!</div>';
+    return;
+  }
+  grid.innerHTML = jobs.map(function(j){
+    return '<div class="bg-white rounded-3xl p-8 border border-[#e0e0e3] hover:shadow-md transition-shadow">'
+      + '<div class="flex items-start justify-between mb-5">'
+      + '<div>'
+      + '<span class="inline-block bg-emerald-50 text-emerald-700 text-xs font-bold px-3 py-1 rounded-full mb-3">' + j.tag + '</span>'
+      + '<h3 class="text-lg font-bold text-[#18181b]">' + j.title + '</h3>'
+      + '</div>'
+      + '</div>'
+      + '<p class="text-[#444448] text-sm leading-relaxed mb-5">' + j.desc + '</p>'
+      + '<div class="flex items-center gap-4 text-xs text-[#444448] mb-6">'
+      + '<span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;font-variation-settings:\'FILL\' 1">location_on</span>' + j.location + '</span>'
+      + '<span class="flex items-center gap-1"><span class="material-symbols-outlined" style="font-size:14px;font-variation-settings:\'FILL\' 1">work</span>' + j.type + '</span>'
+      + '</div>'
+      + '<button onclick="document.getElementById(\'career-form\').scrollIntoView({behavior:\'smooth\'})" class="w-full bg-[#065f46] text-white font-bold py-3 rounded-xl hover:bg-[#047857] transition-colors text-sm">Apply Now</button>'
+      + '</div>';
+  }).join('');
+}
+
+renderJobs(allJobs);
+
+// Career form
+var careerSubmitting = false;
+function submitCareer(e){
+  e.preventDefault();
+  var form = e.target;
+  var data = new FormData(form);
+  var params = new URLSearchParams(data).toString();
+  careerSubmitting = true;
+  document.getElementById('career-iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSfCQMSoyRfBGQg6-v49bOnc1qV9iNKA_k05djwLEqg0fOGuTQ/formResponse?' + params + '&submit=Submit';
+}
+function onCareerLoad(){
+  if(careerSubmitting){
+    careerSubmitting = false;
+    document.getElementById('career-form').classList.add('hidden');
+    document.getElementById('career-success').classList.remove('hidden');
+  }
+}
+
+var newsletterSubmitting = false;
+function submitNewsletter(e){
+  e.preventDefault();
+  newsletterSubmitting = true;
+  document.getElementById('newsletter-iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSeKqCaSlT3WkCDfxbpt9k6RCiL218KMjblonPf4xGT68g0KOA/formResponse?entry.1153429573=' + encodeURIComponent(document.getElementById('newsletter-email').value) + '&submit=Submit';
+}
+function onNewsletterLoad(){
+  if(newsletterSubmitting){ newsletterSubmitting=false; document.getElementById('newsletter-form').classList.add('hidden'); document.getElementById('newsletter-success').classList.remove('hidden'); }
+}
+</script>
+</body>
+</html>
