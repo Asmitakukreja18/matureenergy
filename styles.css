@@ -18,3 +18,146 @@ html,body{overflow-x:hidden;max-width:100%;background-color:#f5f5f7;font-family:
 .no-scrollbar::-webkit-scrollbar{display:none}
 .no-scrollbar{-ms-overflow-style:none;scrollbar-width:none}
 a{text-decoration:none}
+
+/* Dropdown navigation */
+.nav-dropdown{position:relative;display:flex;align-items:center}
+.nav-dropdown-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(-4px);background:white;border-radius:14px;min-width:240px;box-shadow:0 8px 32px rgba(0,0,0,0.13);border:1px solid rgba(0,0,0,0.06);opacity:0;visibility:hidden;pointer-events:none;transition:opacity 0.2s ease,transform 0.2s ease,visibility 0.2s;z-index:2000;padding:16px 0 8px}
+.nav-dropdown-menu::before{content:'';position:absolute;top:-12px;left:0;right:0;height:12px}
+.nav-dropdown:hover .nav-dropdown-menu{opacity:1;visibility:visible;pointer-events:auto;transform:translateX(-50%) translateY(0)}
+.nav-dropdown-item{display:block;padding:10px 18px;color:#18181b;font-size:0.82rem;font-family:Manrope,sans-serif;font-weight:500;transition:background 0.15s,color 0.15s;white-space:nowrap}
+.nav-dropdown-item:hover{background:#f0fdf4;color:#065f46}
+/* Page content blur when mobile menu open */
+.menu-open .page-blur{filter:blur(3px);transition:filter 0.3s}
+
+/* Floating Side Tab */
+.side-tab{
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.side-tab a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  transition: all 0.3s ease;
+}
+.side-tab a:hover{
+  width: 70px;
+}
+.side-tab .whatsapp{background:#25D366;}
+.side-tab .phone{background:#065f46;}
+.side-tab .mail{background:#004532;}
+.side-tab .linkedin{background:#0077B5;}
+.side-tab .side-icon{
+  width: 28px;
+  height: 28px;
+  color: white;
+}
+
+/* Premium Cinematic Logo Intro/Loading Animation */
+.logo-intro{position:fixed;top:0;left:0;width:100vw;height:100vh;display:flex;align-items:center;justify-content:center;z-index:10000;opacity:1;background:#ffffff;transition:opacity 1.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 1.5s cubic-bezier(0.4, 0, 0.2, 1);visibility:visible;overflow:hidden}
+.logo-intro.hidden{opacity:0;visibility:hidden;pointer-events:none}
+.logo-intro-overlay{position:absolute;inset:0;background:#ffffff;}
+.logo-intro-container{position:relative;z-index:1;text-align:center}
+.logo-intro img{height:160px;opacity:0;filter:blur(10px);transform:translateY(30px);animation:logoReveal 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 0.3s}
+
+/* Hero Section Styles */
+.hero-section{
+  position: relative;
+  width: 100%;
+  height: 100svh;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: hidden;
+}
+@media(min-width: 768px){
+  .hero-section{
+    height: 85vh;
+    min-height: 650px;
+  }
+}
+.hero-video{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.02);
+}
+.hero-overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(0,0,0,.35), rgba(0,0,0,.35));
+}
+.hero-content{
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 0 24px 60px;
+  max-width: 90rem;
+  width: 100%;
+}
+.hero-title-line{
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 0 20px rgba(0,0,0,.4);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  opacity: 0;
+  filter: blur(12px);
+  transform: translateY(80px);
+  animation: heroLineReveal 1.2s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+.hero-line-1{ animation-delay: 1.6s; }
+.hero-line-2{ animation-delay: 1.9s; }
+.hero-line-3{ animation-delay: 2.2s; }
+.hero-subtitle{
+  color: rgba(255,255,255,0.8);
+  text-shadow: 0 0 15px rgba(0,0,0,.3);
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+  animation: heroFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 2.6s;
+}
+.hero-buttons{
+  opacity: 0;
+  transform: translateY(40px);
+  filter: blur(8px);
+  animation: heroFadeIn 1s cubic-bezier(0.4, 0, 0.2, 1) forwards 3s;
+}
+
+/* Subtle Floating Particles */
+.particles-container{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:5;
+}
+.particle{
+  position:absolute;width:4px;height:4px;background:rgba(255,255,255,0.6);border-radius:50%;box-shadow:0 0 10px rgba(255,255,255,0.8);
+}
+
+/* Keyframes */
+@keyframes logoReveal{
+  to{opacity:1;filter:blur(0);transform:translateY(0)}
+}
+@keyframes textFadeIn{
+  to{opacity:1;filter:blur(0);transform:translateY(0)}
+}
+@keyframes heroLineReveal{
+  to{opacity:1;filter:blur(0);transform:translateY(0)}
+}
+@keyframes heroFadeIn{
+  to{opacity:1;filter:blur(0);transform:translateY(0)}
+}
+@keyframes floatParticle{
+  0%{transform:translateY(0) translateX(0) scale(1);opacity:0}
+  10%{opacity:1}
+  90%{opacity:1}
+  100%{transform:translateY(-100vh) translateX(50px) scale(0.5);opacity:0}
+}

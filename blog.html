@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog – Mature Energy Solar</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: { extend: {
+        colors: {
+          primary:"#004532","on-primary":"#ffffff","primary-container":"#065f46","on-primary-container":"#a0d8bc","primary-fixed":"#a6f2d1","primary-fixed-dim":"#8bd6b6","on-primary-fixed":"#002116","on-primary-fixed-variant":"#00513b",
+          secondary:"#006e2f","on-secondary":"#ffffff","secondary-container":"#6bff8f","on-secondary-container":"#007432","secondary-fixed":"#6bff8f","secondary-fixed-dim":"#4ae176","on-secondary-fixed":"#002109","on-secondary-fixed-variant":"#005321",
+          background:"#f5f5f7",surface:"#f5f5f7","surface-bright":"#ffffff","surface-dim":"#d6d6d9","surface-variant":"#e0e0e3","surface-container-lowest":"#ffffff","surface-container-low":"#efefef","surface-container":"#e8e8ea","surface-container-high":"#e0e0e2","surface-container-highest":"#d8d8da","on-surface":"#18181b","on-surface-variant":"#444448","on-background":"#18181b",outline:"#717175","outline-variant":"#c4c4c7","inverse-surface":"#2c2c2e","inverse-on-surface":"#f0f0f2","inverse-primary":"#8bd6b6","surface-tint":"#1b6b51",
+          tertiary:"#652925","on-tertiary":"#ffffff","tertiary-container":"#823f3a","on-tertiary-container":"#ffb4ad","tertiary-fixed":"#ffdad6","tertiary-fixed-dim":"#ffb3ac","on-tertiary-fixed":"#3b0908","on-tertiary-fixed-variant":"#73332f",
+          error:"#ba1a1a","on-error":"#ffffff","error-container":"#ffdad6","on-error-container":"#93000a"
+        },
+        spacing:{ gutter:"32px","stack-md":"24px","stack-lg":"48px","section-padding-y":"120px","stack-sm":"12px" },
+        fontFamily:{ h1:["Manrope","sans-serif"],h2:["Manrope","sans-serif"],h3:["Manrope","sans-serif"],display:["Manrope","sans-serif"],"body-md":["Manrope","sans-serif"],"body-lg":["Manrope","sans-serif"],"label-caps":["Manrope","sans-serif"] },
+        fontSize:{
+          display:["64px",{lineHeight:"1.1",letterSpacing:"-0.02em",fontWeight:"800"}],
+          h1:["48px",{lineHeight:"1.2",letterSpacing:"-0.01em",fontWeight:"700"}],
+          h2:["32px",{lineHeight:"1.3",fontWeight:"700"}],
+          h3:["24px",{lineHeight:"1.4",fontWeight:"600"}],
+          "body-lg":["18px",{lineHeight:"1.6",fontWeight:"400"}],
+          "body-md":["16px",{lineHeight:"1.6",fontWeight:"400"}],
+          "label-caps":["14px",{lineHeight:"1.2",letterSpacing:"0.05em",fontWeight:"700"}]
+        }
+      }}
+    }
+  </script>
+</head>
+<body class="bg-background text-on-surface">
+
+<!-- Floating Side Tab -->
+<div class="side-tab">
+  <a href="https://wa.me/919648183349" target="_blank" class="whatsapp">
+    <svg class="side-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.488-.5-.67-.51-.173-.01-.371-.015-.57-.015-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.247-.694.247-1.29.173-1.414-.073-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+  </a>
+  <a href="tel:+919648183349" class="phone">
+    <span class="material-symbols-outlined side-icon" style="font-variation-settings:'FILL' 1">call</span>
+  </a>
+  <a href="mailto:hr@matureenergy.in" class="mail">
+    <span class="material-symbols-outlined side-icon" style="font-variation-settings:'FILL' 1">mail</span>
+  </a>
+  <a href="https://www.linkedin.com/company/mature-energy" target="_blank" class="linkedin">
+    <svg class="side-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+    </svg>
+  </a>
+</div>
+
+<!-- Logo Intro -->
+<div id="logo-intro" class="logo-intro">
+  <div class="logo-intro-overlay"></div>
+  <div class="logo-intro-container">
+    <img src="images/logo.png" alt="Mature Energy">
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav id="navbar" class="fixed top-0 left-0 right-0 bg-white/95 backdrop-blur-[12px] border-b border-black/[0.07] shadow-[0_1px_4px_rgba(0,0,0,0.06)]" style="z-index:1100">
+  <div class="max-w-[90rem] mx-auto px-4 md:px-6 flex justify-between items-center" style="min-height:72px">
+    <a href="index.html">
+      <img src="images/logo.png" alt="Mature Energy" style="height:56px;object-fit:contain;width:auto;max-width:180px;display:block" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+      <span style="display:none;color:#064e3b;font-family:Manrope,sans-serif;font-weight:900;font-size:1.3rem">MatureEnergy</span>
+    </a>
+    <div class="hidden lg:flex gap-6 items-center">
+      <a href="index.html" class="nav-link" data-page="home">Home</a>
+      <a href="about.html" class="nav-link" data-page="about">About Us</a>
+      <div class="nav-dropdown">
+        <a href="services.html" class="nav-link flex items-center gap-0.5" data-page="services">Services <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;line-height:1">expand_more</span></a>
+        <div class="nav-dropdown-menu">
+          <a href="services.html#open-access" class="nav-dropdown-item">Open Access Parks</a>
+          <a href="services.html#solar-installation" class="nav-dropdown-item">Solar Installation</a>
+          <a href="services.html#om" class="nav-dropdown-item">Operations &amp; Maintenance</a>
+          <a href="services.html#audit" class="nav-dropdown-item">Solar Plant Audit</a>
+          <a href="services.html#green-ammonia" class="nav-dropdown-item">Green Ammonia &amp; Hydrogen</a>
+          <a href="services.html#project-mgmt" class="nav-dropdown-item">Project Management &amp; Consultancy</a>
+        </div>
+      </div>
+      <a href="projects.html" class="nav-link" data-page="projects">Projects</a>
+      <a href="safety.html" class="nav-link" data-page="safety">Safety</a>
+      <a href="partner.html" class="nav-link" data-page="partner">Channel Partner</a>
+      <a href="careers.html" class="nav-link" data-page="careers">Careers</a>
+      <a href="blog.html" class="nav-link" data-page="blog">Blog</a>
+    </div>
+    <div class="flex items-center gap-2">
+      <a href="contact.html" class="hidden sm:inline-flex border border-[#065f46] text-[#065f46] rounded-full px-5 py-2 text-sm font-bold hover:border-[#047857] hover:text-[#047857] transition-colors">Contact Us</a>
+      <a href="contact.html" class="hidden sm:inline-flex bg-[#065f46] text-white rounded-full px-5 py-2 text-sm font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+      <button class="lg:hidden p-2 text-[#064e3b]" onclick="toggleMenu()">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+    </div>
+  </div>
+</nav>
+<div id="mobile-drawer" class="fixed inset-0 hidden" style="z-index:9999" onclick="closeMenu()">
+  <div class="absolute inset-0 bg-black/50 backdrop-blur-md"></div>
+  <div class="absolute right-0 top-0 h-full w-72 bg-white p-8 overflow-y-auto" style="border-radius:24px 0 0 24px" onclick="event.stopPropagation()">
+    <div class="flex justify-between items-center mb-8">
+      <a href="index.html"><img src="images/logo.png" alt="Mature Energy" style="height:72px;object-fit:contain;width:auto;max-width:200px" onerror="this.style.display='none'"></a>
+      <button onclick="closeMenu()" class="p-2 text-[#064e3b]"><span class="material-symbols-outlined">close</span></button>
+    </div>
+    <div class="space-y-1 mb-8">
+      <a href="index.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="home">Home</a>
+      <a href="about.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="about">About Us</a>
+      <a href="services.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="services">Services</a>
+      <a href="projects.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="projects">Projects</a>
+      <a href="safety.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="safety">Safety</a>
+      <a href="partner.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="partner">Channel Partner</a>
+      <a href="careers.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="careers">Careers</a>
+      <a href="blog.html" class="mobile-nav-link block py-3 px-4 rounded-xl text-[#064e3b] font-medium hover:bg-emerald-50 transition-colors" data-page="blog">Blog</a>
+    </div>
+    <div class="flex flex-col gap-3">
+      <a href="contact.html" class="block text-center border-2 border-[#065f46] text-[#065f46] rounded-full py-3 font-bold hover:bg-emerald-50 transition-colors">Contact Us</a>
+      <a href="contact.html" class="block text-center bg-[#065f46] text-white rounded-full py-3 font-bold hover:bg-[#047857] transition-colors">Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="relative pt-[72px] bg-[#065f46] overflow-hidden" style="min-height:380px">
+  <div class="absolute inset-0">
+    <img src="images/panels-electricity-order-sunlight.webp" alt="" class="w-full h-full object-cover">
+    <div class="absolute inset-0 bg-black/55"></div>
+  </div>
+  <div class="relative z-10 max-w-4xl mx-auto px-6 py-20 text-center">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-300 mb-4 block">Insights & Updates</span>
+    <h1 class="text-4xl md:text-5xl font-extrabold text-white mb-5" style="letter-spacing:-0.02em">Mature Energy Blog</h1>
+    <p class="text-emerald-200 text-lg max-w-xl mx-auto">Stay informed with the latest news, insights, and updates from India's solar energy sector.</p>
+  </div>
+</section>
+
+<!-- COMING SOON / BLOG GRID -->
+<section class="py-20 px-4 md:px-8 max-w-7xl mx-auto">
+  <div class="text-center mb-14">
+    <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-3 block">Latest Articles</span>
+    <h2 class="text-3xl md:text-4xl font-extrabold text-[#18181b] mb-4">Solar Energy Insights</h2>
+    <p class="text-[#444448] max-w-xl mx-auto">Expert perspectives on renewable energy, solar technology, policy, and sustainability from the Mature Energy team.</p>
+  </div>
+
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="h-48 bg-emerald-50 flex items-center justify-center">
+        <span class="material-symbols-outlined text-emerald-300" style="font-size:64px;font-variation-settings:'FILL' 1">solar_power</span>
+      </div>
+      <div class="p-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-2 block">Policy</span>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">PM Surya Ghar Yojana: What It Means for Homeowners</h3>
+        <p class="text-[#444448] text-sm mb-4">India's rooftop solar push under PM Surya Ghar Muft Bijli Yojana and how you can benefit from free electricity subsidies.</p>
+        <span class="text-xs text-[#717175]">Coming Soon</span>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="h-48 bg-emerald-50 flex items-center justify-center">
+        <span class="material-symbols-outlined text-emerald-300" style="font-size:64px;font-variation-settings:'FILL' 1">energy_savings_leaf</span>
+      </div>
+      <div class="p-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-2 block">Technology</span>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Open Access Solar: How Industries Are Saving 30–40% on Power Bills</h3>
+        <p class="text-[#444448] text-sm mb-4">A deep dive into how Open Access solar power procurement works and the massive savings available to C&I consumers in India.</p>
+        <span class="text-xs text-[#717175]">Coming Soon</span>
+      </div>
+    </div>
+    <div class="bg-white rounded-3xl overflow-hidden border border-[#e0e0e3] hover:shadow-md transition-shadow">
+      <div class="h-48 bg-emerald-50 flex items-center justify-center">
+        <span class="material-symbols-outlined text-emerald-300" style="font-size:64px;font-variation-settings:'FILL' 1">factory</span>
+      </div>
+      <div class="p-6">
+        <span class="text-xs font-bold uppercase tracking-widest text-emerald-600 mb-2 block">Projects</span>
+        <h3 class="text-lg font-bold text-[#18181b] mb-2">Behind the Build: Commissioning a 10 MW Solar Plant in Maharashtra</h3>
+        <p class="text-[#444448] text-sm mb-4">A behind-the-scenes look at what goes into delivering a large-scale solar EPC project from site survey to commissioning.</p>
+        <span class="text-xs text-[#717175]">Coming Soon</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="text-center mt-16 bg-[#065f46] rounded-3xl p-12">
+    <span class="material-symbols-outlined text-emerald-300 mb-4" style="font-size:48px;font-variation-settings:'FILL' 1">notifications</span>
+    <h3 class="text-2xl font-bold text-white mb-3">Blog Coming Soon</h3>
+    <p class="text-emerald-200 mb-6 max-w-md mx-auto">We're working on bringing you expert solar energy content. Subscribe to be notified when we publish.</p>
+    <a href="contact.html" class="inline-flex items-center gap-2 bg-white text-[#065f46] font-bold px-8 py-3 rounded-full hover:bg-emerald-50 transition-colors">
+      Get in Touch
+      <span class="material-symbols-outlined" style="font-size:18px">arrow_forward</span>
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#064e3b] text-white mt-10" style="border-radius:3rem 3rem 0 0">
+  <div class="max-w-7xl mx-auto px-6 md:px-10 pt-16 pb-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10 mb-12">
+      <div>
+        <img src="images/logo.png" alt="Mature Energy" style="height:64px;object-fit:contain;margin-bottom:16px" onerror="this.style.display='none'">
+        <p class="text-emerald-200 text-sm leading-relaxed mb-4">Transforming India, Inspiring Lives</p>
+        <div class="space-y-2 text-sm text-emerald-200">
+          <div class="flex items-start gap-2"><span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1;margin-top:2px">location_on</span><span>D 120-121, Vibhuti Khand, Gomti Nagar, Lucknow 226010</span></div>
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">phone</span><a href="tel:+919648183349" class="hover:text-white">+91 9648183349</a></div>
+          <div class="flex items-center gap-2"><span class="material-symbols-outlined text-emerald-400" style="font-size:16px;font-variation-settings:'FILL' 1">mail</span><a href="mailto:hr@matureenergy.in" class="hover:text-white">hr@matureenergy.in</a></div>
+        </div>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Quick Links</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-white transition-colors">About Us</a></li>
+          <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+          <li><a href="projects.html" class="hover:text-white transition-colors">Projects</a></li>
+          <li><a href="partner.html" class="hover:text-white transition-colors">Channel Partner</a></li>
+          <li><a href="careers.html" class="hover:text-white transition-colors">Careers</a></li>
+          <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-bold text-white mb-5 text-sm uppercase tracking-wider">Legal</h4>
+        <ul class="space-y-3 text-sm text-emerald-200">
+          <li><a href="#" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li><a href="#" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="contact.html" class="hover:text-white transition-colors">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-white/10 pt-8 text-center text-emerald-300 text-sm">
+      © 2025 Mature Energy. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+<script src="components.js"></script>
+</body>
+</html>
