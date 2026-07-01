@@ -74,11 +74,9 @@
       <div class="nav-dropdown">
         <a href="services.html" class="nav-link flex items-center gap-0.5" data-page="services">Services <span class="material-symbols-outlined" style="font-size:16px;vertical-align:middle;line-height:1">expand_more</span></a>
         <div class="nav-dropdown-menu">
-          <a href="services.html#open-access" class="nav-dropdown-item">Open Access Parks</a>
           <a href="services.html#solar-installation" class="nav-dropdown-item">Solar Installation</a>
           <a href="services.html#om" class="nav-dropdown-item">Operations &amp; Maintenance</a>
           <a href="services.html#audit" class="nav-dropdown-item">Solar Plant Audit</a>
-          <a href="services.html#green-ammonia" class="nav-dropdown-item">Green Ammonia &amp; Hydrogen</a>
           <a href="services.html#project-mgmt" class="nav-dropdown-item">Project Management &amp; Consultancy</a>
         </div>
       </div>
@@ -228,49 +226,92 @@
       <div id="career-success" class="hidden text-center py-12">
         <span class="material-symbols-outlined text-emerald-600 mb-4 block" style="font-size:56px;font-variation-settings:'FILL' 1">check_circle</span>
         <h3 class="text-2xl font-bold text-[#18181b] mb-3">Application Received!</h3>
-        <p class="text-[#444448]">We've got your details and will be in touch when the right opportunity arises.</p>
+        <p class="text-[#444448]">We've got your application and will be in touch soon. Thank you!</p>
       </div>
-      <form id="career-form" onsubmit="submitCareer(event)" class="space-y-5">
+      <form id="career-form" onsubmit="submitCareerAjax(event)" class="space-y-5">
+        <input type="hidden" name="access_key" value="f541e896-603b-43cd-80fe-ace2ea6ea653">
+        <input type="hidden" name="subject" value="New Job Application – Mature Energy">
+        <input type="hidden" name="from_name" value="Mature Energy Careers">
+        <input type="hidden" name="_replyto" id="replyto-field" value="">
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
             <label class="block text-sm font-semibold text-[#18181b] mb-2">Full Name *</label>
-            <input type="text" name="entry.1353127212" required placeholder="Your full name"
+            <input type="text" name="Full Name" required placeholder="Your full name"
               class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
           </div>
           <div>
             <label class="block text-sm font-semibold text-[#18181b] mb-2">Email *</label>
-            <input type="email" name="entry.1246173823" required placeholder="your@email.com"
+            <input type="email" name="Email" id="career-email" required placeholder="your@email.com"
+              oninput="document.getElementById('replyto-field').value=this.value"
               class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
           </div>
         </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-[#18181b] mb-2">Phone Number *</label>
+            <input type="tel" name="Phone Number" required placeholder="+91 98765 43210"
+              class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#18181b] mb-2">Current Location *</label>
+            <input type="text" name="Current Location" required placeholder="City, State"
+              class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-semibold text-[#18181b] mb-2">Position Applying For *</label>
+            <select name="Position" required
+              class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+              <option value="">Select position</option>
+              <option value="Site Engineer">Site Engineer</option>
+              <option value="Sales Head">Sales Head</option>
+              <option value="Digital Marketer">Digital Marketer</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-semibold text-[#18181b] mb-2">Years of Experience *</label>
+            <select name="Years of Experience" required
+              class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
+              <option value="">Select experience</option>
+              <option value="Fresher (0 Years)">Fresher (0 Years)</option>
+              <option value="0–1 Years">0–1 Years</option>
+              <option value="1–3 Years">1–3 Years</option>
+              <option value="3–5 Years">3–5 Years</option>
+              <option value="5+ Years">5+ Years</option>
+            </select>
+          </div>
+        </div>
         <div>
-          <label class="block text-sm font-semibold text-[#18181b] mb-2">Area of Interest *</label>
-          <select name="entry.525221630" required
+          <label class="block text-sm font-semibold text-[#18181b] mb-2">Highest Qualification *</label>
+          <select name="Qualification" required
             class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
-            <option value="">Select area</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Sales & Business Development">Sales & Business Development</option>
-            <option value="Operations">Operations</option>
-            <option value="Design">Design</option>
-            <option value="Finance">Finance</option>
-            <option value="Other">Other</option>
+            <option value="">Select qualification</option>
+            <option value="10th / SSC">10th / SSC</option>
+            <option value="12th / HSC">12th / HSC</option>
+            <option value="ITI / Diploma">ITI / Diploma</option>
+            <option value="B.Tech / B.E.">B.Tech / B.E.</option>
+            <option value="MBA / PGDM">MBA / PGDM</option>
+            <option value="Other Graduate">Other Graduate</option>
+            <option value="Post Graduate">Post Graduate</option>
           </select>
         </div>
         <div>
-          <label class="block text-sm font-semibold text-[#18181b] mb-2">Resume Link</label>
-          <input type="url" name="entry.1197173698" placeholder="https://linkedin.com/in/yourprofile or Google Drive link"
+          <label class="block text-sm font-semibold text-[#18181b] mb-2">LinkedIn / Resume Link</label>
+          <input type="url" name="LinkedIn / Resume Link" placeholder="https://linkedin.com/in/yourprofile or Google Drive CV link"
             class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors">
         </div>
         <div>
-          <label class="block text-sm font-semibold text-[#18181b] mb-2">Tell us about yourself</label>
-          <textarea name="entry.1224762942" rows="4" placeholder="Briefly describe your experience and what excites you about clean energy..."
+          <label class="block text-sm font-semibold text-[#18181b] mb-2">Cover Letter / About Yourself *</label>
+          <textarea name="Cover Letter" rows="5" required placeholder="Briefly describe your experience, skills, and why you want to join Mature Energy..."
             class="w-full border border-[#e0e0e3] rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-[#065f46] transition-colors resize-none"></textarea>
         </div>
-        <button type="submit" class="w-full bg-[#065f46] text-white font-bold py-4 rounded-xl hover:bg-[#047857] transition-colors">
+        <button type="submit" class="w-full bg-[#065f46] text-white font-bold py-4 rounded-xl hover:bg-[#047857] transition-colors flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined" style="font-size:20px">send</span>
           Submit Application
         </button>
       </form>
-      <iframe id="career-iframe" name="career-iframe" style="display:none" onload="onCareerLoad()"></iframe>
     </div>
   </div>
 </section>
@@ -386,22 +427,33 @@ function renderJobs(jobs){
 
 renderJobs(allJobs);
 
-// Career form
-var careerSubmitting = false;
-function submitCareer(e){
+// Career form – Web3Forms
+function submitCareerAjax(e){
   e.preventDefault();
-  var form = e.target;
+  var form = document.getElementById('career-form');
+  var btn = form.querySelector('button[type="submit"]');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:20px">progress_activity</span> Sending...';
   var data = new FormData(form);
-  var params = new URLSearchParams(data).toString();
-  careerSubmitting = true;
-  document.getElementById('career-iframe').src = 'https://docs.google.com/forms/d/e/1FAIpQLSfCQMSoyRfBGQg6-v49bOnc1qV9iNKA_k05djwLEqg0fOGuTQ/formResponse?' + params + '&submit=Submit';
-}
-function onCareerLoad(){
-  if(careerSubmitting){
-    careerSubmitting = false;
-    document.getElementById('career-form').classList.add('hidden');
-    document.getElementById('career-success').classList.remove('hidden');
-  }
+  fetch('https://api.web3forms.com/submit', {
+    method: 'POST',
+    headers: { 'Accept': 'application/json' },
+    body: data
+  })
+  .then(function(res){ return res.json(); })
+  .then(function(json){
+    if(json.success){
+      form.classList.add('hidden');
+      document.getElementById('career-success').classList.remove('hidden');
+    } else {
+      throw new Error('Failed');
+    }
+  })
+  .catch(function(){
+    btn.disabled = false;
+    btn.innerHTML = '<span class="material-symbols-outlined" style="font-size:20px">send</span> Submit Application';
+    alert('Something went wrong. Please try again or email hr@matureenergy.in directly.');
+  });
 }
 
 var newsletterSubmitting = false;
